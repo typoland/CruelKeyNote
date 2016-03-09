@@ -12,7 +12,7 @@ import Foundation
 @objc(OrderedSetArrayValueTransformer) class OrderedSetArrayValueTransformer : NSValueTransformer {
     
     override class func transformedValueClass() -> AnyClass {
-        return NSMutableArray.self
+        return NSArray.self
     }
     
     func allowsReverseTransformation() -> Bool {
@@ -20,16 +20,17 @@ import Foundation
         }
     
     override func transformedValue(value: AnyObject?) -> AnyObject? {
+        print("OrderedSetArrayValueTransformer ➔ to Array")
+        print ((value as! NSOrderedSet).array)
         return (value as! NSOrderedSet).array
     }
-       /* - (id)transformedValue:(id)value {
-            return [(NSOrderedSet *)value array];
-            }*/
+
     override func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
+        print("OrderedSetArrayValueTransformer ⬅︎ reverse")
+        //print (NSOrderedSet(array: value as! [AnyObject]))
         return NSOrderedSet(array: value as! [AnyObject])
     }
-            /*- (id)reverseTransformedValue:(id)value {
-                return [NSOrderedSet orderedSetWithArray:value];*/
+
 }
 
 

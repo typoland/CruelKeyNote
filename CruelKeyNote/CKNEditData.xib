@@ -15,7 +15,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="IjH-Ig-YSB" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="163" width="494" height="428"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -25,14 +25,14 @@
                 <subviews>
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" id="LJj-rr-4Nx">
                         <rect key="frame" x="0.0" y="0.0" width="494" height="428"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="sUG-jW-PZd">
                                 <rect key="frame" x="0.0" y="0.0" width="494" height="136.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="sdi-J8-6yY">
-                                        <rect key="frame" x="0.0" y="26" width="494" height="110"/>
+                                        <rect key="frame" x="0.0" y="27" width="494" height="110"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="13B-4d-kEn">
                                             <rect key="frame" x="1" y="0.0" width="492" height="109"/>
@@ -88,7 +88,7 @@
                                             <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="xr6-jz-ImM">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="xr6-jz-ImM">
                                             <rect key="frame" x="477" y="23" width="16" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -99,7 +99,7 @@
                                     </scrollView>
                                     <button verticalHuggingPriority="750" id="gHt-SL-ORp">
                                         <rect key="frame" x="331" y="3" width="65" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Add Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kfb-Lh-6JV">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -111,7 +111,7 @@
                                     </button>
                                     <button verticalHuggingPriority="750" id="PYW-Fh-uQz">
                                         <rect key="frame" x="397" y="3" width="90" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oZO-9p-CzE">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -127,22 +127,11 @@
                                 <rect key="frame" x="0.0" y="137.5" width="494" height="290.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NuK-2D-3vQ">
-                                        <rect key="frame" x="5" y="266" width="482" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="D6k-AX-7eq">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                        <connections>
-                                            <binding destination="baT-kB-gnA" name="value" keyPath="selection.startDate" id="0p6-Mc-g9o"/>
-                                        </connections>
-                                    </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Wxk-7i-F4e">
-                                        <rect key="frame" x="5" y="265" width="482" height="17"/>
+                                        <rect key="frame" x="5" y="265" width="484" height="17"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="o1w-1h-8FD">
+                                            <dateFormatter key="formatter" dateStyle="long" timeStyle="short" id="AaJ-Pc-CPn"/>
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" red="0.25749684343434343" green="0.25749684343434343" blue="0.25749684343434343" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -151,48 +140,21 @@
                                             <binding destination="baT-kB-gnA" name="value" keyPath="selection.startDate" id="yYC-Jm-Tkw"/>
                                         </connections>
                                     </textField>
-                                    <button verticalHuggingPriority="750" id="hWg-dn-6lM">
-                                        <rect key="frame" x="398" y="9" width="87" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Remove Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4T-yN-wQf">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="smallSystem"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="remove:" target="2Zv-Y0-MtE" id="VYF-6E-eqs"/>
-                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canRemove" id="TtH-5v-5Aw"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" id="stM-10-Zq2">
-                                        <rect key="frame" x="324" y="9" width="66" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Add Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qSa-CH-9dc">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="smallSystem"/>
-                                            <connections>
-                                                <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="hTd-t2-WBR"/>
-                                            </connections>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="add:" target="2Zv-Y0-MtE" id="7No-1q-6qV"/>
-                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="jTJ-ln-VfK"/>
-                                        </connections>
-                                    </button>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="PbZ-id-MSK">
-                                        <rect key="frame" x="7" y="123" width="478" height="135"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="7" y="28" width="480" height="233"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Eh0-mc-fIc">
-                                            <rect key="frame" x="1" y="23" width="476" height="111"/>
+                                            <rect key="frame" x="1" y="0.0" width="478" height="232"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="1CM-LO-lbg" id="iGK-wJ-jqC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="591" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="478" height="209"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="231" minWidth="40" maxWidth="1000" id="DdV-3V-2Gy">
+                                                        <tableColumn width="94" minWidth="40" maxWidth="1000" id="DdV-3V-2Gy">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -204,11 +166,8 @@
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                            <connections>
-                                                                <binding destination="2Zv-Y0-MtE" name="value" keyPath="arrangedObjects.title" id="ZQU-rN-t1T"/>
-                                                            </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="354" minWidth="40" maxWidth="1000" id="bUD-GQ-np2">
+                                                        <tableColumn width="241" minWidth="40" maxWidth="1000" id="bUD-GQ-np2">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -226,19 +185,46 @@
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
-                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="Ngb-xU-ofm">
-                                            <rect key="frame" x="1" y="118" width="476" height="16"/>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Ngb-xU-ofm">
+                                            <rect key="frame" x="1" y="216" width="478" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sSQ-Cl-78P">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="sSQ-Cl-78P">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="1CM-LO-lbg">
-                                            <rect key="frame" x="0.0" y="0.0" width="591" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
+                                    <button verticalHuggingPriority="750" id="hWg-dn-6lM">
+                                        <rect key="frame" x="400" y="5" width="87" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Remove Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4T-yN-wQf">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="remove:" target="2Zv-Y0-MtE" id="VYF-6E-eqs"/>
+                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canRemove" id="TtH-5v-5Aw"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" id="stM-10-Zq2">
+                                        <rect key="frame" x="326" y="5" width="66" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Add Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qSa-CH-9dc">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <connections>
+                                                <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="hTd-t2-WBR"/>
+                                            </connections>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="add:" target="2Zv-Y0-MtE" id="7No-1q-6qV"/>
+                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="jTJ-ln-VfK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </customView>
                         </subviews>
@@ -261,13 +247,13 @@
         </arrayController>
         <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="2Zv-Y0-MtE" userLabel="Events">
             <connections>
-                <binding destination="baT-kB-gnA" name="contentArray" keyPath="selection.events" id="hxI-fK-us3">
+                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="cbz-lS-Xcm"/>
+                <binding destination="baT-kB-gnA" name="contentArray" keyPath="selection.events" id="OCq-Cb-NzU">
                     <dictionary key="options">
                         <bool key="NSDeletesObjectsOnRemove" value="YES"/>
                         <string key="NSValueTransformerName">OrderedSetArrayValueTransformer</string>
                     </dictionary>
                 </binding>
-                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="cbz-lS-Xcm"/>
             </connections>
         </arrayController>
     </objects>

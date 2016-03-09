@@ -3,6 +3,7 @@
     <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Event" inverseName="day" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
@@ -14,7 +15,7 @@
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="events" inverseEntity="Day" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="-432" positionY="-2482" width="128" height="88"/>
+        <element name="Day" positionX="-432" positionY="-2482" width="128" height="103"/>
         <element name="Event" positionX="-434" positionY="-2313" width="128" height="133"/>
     </elements>
 </model>
