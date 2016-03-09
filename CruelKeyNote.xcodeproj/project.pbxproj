@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21C9E561C8F5E77002DC3FB /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C9E521C8F5E77002DC3FB /* Day+CoreDataProperties.swift */; };
+		B21C9E571C8F5E77002DC3FB /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C9E531C8F5E77002DC3FB /* Day.swift */; };
+		B21C9E581C8F5E77002DC3FB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C9E541C8F5E77002DC3FB /* Event+CoreDataProperties.swift */; };
+		B21C9E591C8F5E77002DC3FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C9E551C8F5E77002DC3FB /* Event.swift */; };
 		B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */; };
 		B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85661ABDD7CD00F32FC7 /* Document.swift */; };
 		B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85681ABDD7CD00F32FC7 /* Document.xib */; };
@@ -14,6 +18,11 @@
 		B28C856F1ABDD7CD00F32FC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */; };
 		B28C85721ABDD7CD00F32FC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */; };
 		B28C857E1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C857D1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift */; };
+		B28C858C1ABDF36D00F32FC7 /* CKNTimeArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C858B1ABDF36D00F32FC7 /* CKNTimeArrayController.swift */; };
+		B28C858E1ABDF4E700F32FC7 /* CKNMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */; };
+		B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85971ABE269B00F32FC7 /* CKNEditData.xib */; };
+		B28C859C1ABE3DE700F32FC7 /* CKNHudPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */; };
+		B2F81B321C8F7F880017022F /* OrderedSetValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F81B311C8F7F880017022F /* OrderedSetValueTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21C9E521C8F5E77002DC3FB /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Day+CoreDataProperties.swift"; path = "ManagedContext/Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B21C9E531C8F5E77002DC3FB /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = ManagedContext/Day.swift; sourceTree = "<group>"; };
+		B21C9E541C8F5E77002DC3FB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "ManagedContext/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B21C9E551C8F5E77002DC3FB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ManagedContext/Event.swift; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* CruelKeyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruelKeyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +51,11 @@
 		B28C85771ABDD7CD00F32FC7 /* CruelKeyNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruelKeyNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C857C1ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C857D1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruelKeyNoteTests.swift; sourceTree = "<group>"; };
+		B28C858B1ABDF36D00F32FC7 /* CKNTimeArrayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNTimeArrayController.swift; sourceTree = "<group>"; };
+		B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNMainView.swift; sourceTree = "<group>"; };
+		B28C85971ABE269B00F32FC7 /* CKNEditData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKNEditData.xib; sourceTree = "<group>"; };
+		B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNHudPanelController.swift; sourceTree = "<group>"; };
+		B2F81B311C8F7F880017022F /* OrderedSetValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedSetValueTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,10 @@
 		B28C85561ABDD7CD00F32FC7 = {
 			isa = PBXGroup;
 			children = (
+				B21C9E521C8F5E77002DC3FB /* Day+CoreDataProperties.swift */,
+				B21C9E531C8F5E77002DC3FB /* Day.swift */,
+				B21C9E541C8F5E77002DC3FB /* Event+CoreDataProperties.swift */,
+				B21C9E551C8F5E77002DC3FB /* Event.swift */,
 				B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */,
 				B28C857A1ABDD7CD00F32FC7 /* CruelKeyNoteTests */,
 				B28C85601ABDD7CD00F32FC7 /* Products */,
@@ -82,8 +104,13 @@
 				B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */,
 				B28C85661ABDD7CD00F32FC7 /* Document.swift */,
 				B28C85681ABDD7CD00F32FC7 /* Document.xib */,
+				B28C858B1ABDF36D00F32FC7 /* CKNTimeArrayController.swift */,
+				B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */,
+				B28C85971ABE269B00F32FC7 /* CKNEditData.xib */,
+				B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */,
 				B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */,
 				B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */,
+				B2F81B311C8F7F880017022F /* OrderedSetValueTransformer.swift */,
 				B28C856B1ABDD7CD00F32FC7 /* Document.xcdatamodeld */,
 				B28C85621ABDD7CD00F32FC7 /* Supporting Files */,
 			);
@@ -159,6 +186,8 @@
 		B28C85571ABDD7CD00F32FC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Łukasz Dziedzic";
 				TargetAttributes = {
@@ -195,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */,
 				B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */,
 				B28C856F1ABDD7CD00F32FC7 /* Images.xcassets in Resources */,
 				B28C85721ABDD7CD00F32FC7 /* MainMenu.xib in Resources */,
@@ -215,9 +245,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21C9E581C8F5E77002DC3FB /* Event+CoreDataProperties.swift in Sources */,
 				B28C856D1ABDD7CD00F32FC7 /* Document.xcdatamodeld in Sources */,
+				B2F81B321C8F7F880017022F /* OrderedSetValueTransformer.swift in Sources */,
+				B28C859C1ABE3DE700F32FC7 /* CKNHudPanelController.swift in Sources */,
+				B21C9E571C8F5E77002DC3FB /* Day.swift in Sources */,
+				B21C9E591C8F5E77002DC3FB /* Event.swift in Sources */,
+				B28C858C1ABDF36D00F32FC7 /* CKNTimeArrayController.swift in Sources */,
+				B28C858E1ABDF4E700F32FC7 /* CKNMainView.swift in Sources */,
 				B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */,
 				B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */,
+				B21C9E561C8F5E77002DC3FB /* Day+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +317,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -343,6 +382,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CruelKeyNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -354,6 +395,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CruelKeyNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -373,6 +416,7 @@
 				);
 				INFOPLIST_FILE = CruelKeyNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruelKeyNote.app/Contents/MacOS/CruelKeyNote";
 			};
@@ -389,6 +433,7 @@
 				);
 				INFOPLIST_FILE = CruelKeyNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruelKeyNote.app/Contents/MacOS/CruelKeyNote";
 			};
@@ -413,6 +458,7 @@
 				B28C85831ABDD7CD00F32FC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B28C85841ABDD7CD00F32FC7 /* Build configuration list for PBXNativeTarget "CruelKeyNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +467,7 @@
 				B28C85861ABDD7CD00F32FC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
