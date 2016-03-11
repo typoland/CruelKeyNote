@@ -15,19 +15,15 @@ import Foundation
         return NSArray.self
     }
     
-    func allowsReverseTransformation() -> Bool {
+    override class func allowsReverseTransformation() -> Bool {
         return true;
         }
     
     override func transformedValue(value: AnyObject?) -> AnyObject? {
-        print("OrderedSetArrayValueTransformer ➔ to Array")
-        print ((value as! NSOrderedSet).array)
         return (value as! NSOrderedSet).array
     }
 
     override func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
-        print("OrderedSetArrayValueTransformer ⬅︎ reverse")
-        //print (NSOrderedSet(array: value as! [AnyObject]))
         return NSOrderedSet(array: value as! [AnyObject])
     }
 

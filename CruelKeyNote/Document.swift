@@ -11,33 +11,28 @@ import Foundation
 
 class Document: NSPersistentDocument {
     @IBOutlet weak var daysController: CKNTimeArrayController!
-    var hudPanelController = CKNHudPanelController.shared()
+    @IBOutlet weak var eventsController: NSArrayController!
+   
     /*
-    var _managedObjectContext:NSManagedObjectContext? = nil
-    var _persistentStoreCoordinator:NSPersistentStoreCoordinator?=nil
-    var _managedObjectModel:NSManagedObjectModel? = nil
-    */
-    
     func windowDidBecomeKey(notification:NSNotification)
     {
-        hudPanelController.managedObjectContext = self.managedObjectContext
-        if let table = hudPanelController.daysTable != nil {
+        hudPanelController.doc = self
+        if hudPanelController.daysTable != nil {
             hudPanelController.daysTable!.reloadData()
         }
-        //print("windowDidBecomeKey: \(hudPanelController.daysController.content)")
-        //print("table \(hudPanelController.daysTable)")
+        print("windowDidBecameKey \(self)\(hudPanelController)")
 
     }
     func windowDidResignKey(notification:NSNotification) {
-        hudPanelController.managedObjectContext = nil
+        hudPanelController.doc = nil
         
     if hudPanelController.daysTable != nil {
             hudPanelController.daysTable!.reloadData()
         }
-        //print("windowDidResignKey: \(hudPanelController.daysController.content)")
+        print("windowDidResignKey: \(self)\(hudPanelController)")
 
     }
-    
+        */
     
     override init() {
         super.init()
@@ -46,8 +41,9 @@ class Document: NSPersistentDocument {
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
-        print("Panel \(self.managedObjectContext)")
+        //print("Panel \(self.managedObjectContext)")
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
+        
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -60,12 +56,5 @@ class Document: NSPersistentDocument {
         return "Document"
     }
 
-    @IBAction func showPanel(sender:AnyObject) {
-        print("OrderFront \(hudPanelController)")
-        hudPanelController.window?.makeKeyAndOrderFront(self)
-    }
-    @IBAction func hidePanel(sender:AnyObject) {
-        print("OrderOut \(hudPanelController)")
-        hudPanelController.window?.orderOut(self)
-    }
+
 }

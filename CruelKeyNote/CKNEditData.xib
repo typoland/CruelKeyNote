@@ -6,9 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CKNHudPanelController" customModule="CruelKeyNote" customModuleProvider="target">
             <connections>
-                <outlet property="daysController" destination="baT-kB-gnA" id="XNw-Yb-2f4"/>
-                <outlet property="daysTable" destination="PoQ-2t-t3a" id="iKU-Ks-dSZ"/>
-                <outlet property="eventsController" destination="2Zv-Y0-MtE" id="png-vF-LOZ"/>
+                <outlet property="daysTable" destination="iGK-wJ-jqC" id="sx6-W4-VfS"/>
                 <outlet property="window" destination="IjH-Ig-YSB" id="aW9-yR-Zpo"/>
             </connections>
         </customObject>
@@ -17,35 +15,35 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="IjH-Ig-YSB" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="163" width="494" height="428"/>
+            <rect key="contentRect" x="196" y="163" width="199" height="522"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="3vM-lx-Cps">
-                <rect key="frame" x="0.0" y="0.0" width="494" height="428"/>
+                <rect key="frame" x="0.0" y="0.0" width="199" height="522"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" id="LJj-rr-4Nx">
-                        <rect key="frame" x="0.0" y="0.0" width="494" height="428"/>
+                        <rect key="frame" x="0.0" y="0.0" width="199" height="522"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="sUG-jW-PZd">
-                                <rect key="frame" x="0.0" y="0.0" width="494" height="136.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="199" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="sdi-J8-6yY">
-                                        <rect key="frame" x="0.0" y="27" width="494" height="110"/>
+                                        <rect key="frame" x="0.0" y="27" width="199" height="105.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="13B-4d-kEn">
-                                            <rect key="frame" x="1" y="0.0" width="492" height="109"/>
+                                            <rect key="frame" x="1" y="0.0" width="197" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="oOY-Ul-INo" id="PoQ-2t-t3a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="492" height="86"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="197.5" height="81.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="137.33984375" minWidth="40" maxWidth="1000" id="u4R-pY-ilb">
+                                                        <tableColumn width="119.19921875" minWidth="40" maxWidth="1000" id="u4R-pY-ilb">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Start">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -59,10 +57,10 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <connections>
-                                                                <binding destination="baT-kB-gnA" name="value" keyPath="arrangedObjects.startDate" id="PAD-PY-xBN"/>
+                                                                <binding destination="lmC-z7-eVR" name="value" keyPath="arrangedObjects.startDate" id="J1P-Ve-mCZ"/>
                                                             </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="348.5" minWidth="40" maxWidth="1000" id="mqr-wJ-NKV">
+                                                        <tableColumn width="72.5" minWidth="40" maxWidth="1000" id="mqr-wJ-NKV">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Duration">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -75,17 +73,14 @@
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                            <connections>
-                                                                <binding destination="baT-kB-gnA" name="value" keyPath="arrangedObjects.duration" id="iuT-uY-wH2"/>
-                                                            </connections>
                                                         </tableColumn>
                                                     </tableColumns>
                                                 </tableView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ZYL-ep-HU3">
-                                            <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ZYL-ep-HU3">
+                                            <rect key="frame" x="1" y="88.5" width="197" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="xr6-jz-ImM">
@@ -93,42 +88,42 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" focusRingType="none" id="oOY-Ul-INo">
-                                            <rect key="frame" x="0.0" y="0.0" width="492" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="197.5" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" id="gHt-SL-ORp">
-                                        <rect key="frame" x="331" y="3" width="65" height="19"/>
+                                        <rect key="frame" x="36" y="3" width="65" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Add Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kfb-Lh-6JV">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="add:" target="baT-kB-gnA" id="ApY-1s-GEt"/>
-                                            <binding destination="baT-kB-gnA" name="enabled" keyPath="canAdd" id="IO5-TW-LYa"/>
+                                            <action selector="add:" target="lmC-z7-eVR" id="v7u-qd-vKD"/>
+                                            <binding destination="lmC-z7-eVR" name="enabled" keyPath="canAdd" id="Zw1-LR-3Yt"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" id="PYW-Fh-uQz">
-                                        <rect key="frame" x="397" y="3" width="90" height="19"/>
+                                        <rect key="frame" x="102" y="3" width="90" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oZO-9p-CzE">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="remove:" target="baT-kB-gnA" id="ghy-TQ-oxJ"/>
-                                            <binding destination="baT-kB-gnA" name="enabled" keyPath="canRemove" id="JJ2-bj-ObW"/>
+                                            <action selector="remove:" target="lmC-z7-eVR" id="K4c-Wk-s7D"/>
+                                            <binding destination="lmC-z7-eVR" name="enabled" keyPath="canRemove" id="c6C-ft-S3M"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </customView>
                             <customView id="J6k-9s-GHO">
-                                <rect key="frame" x="0.0" y="137.5" width="494" height="290.5"/>
+                                <rect key="frame" x="0.0" y="133" width="199" height="389"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Wxk-7i-F4e">
-                                        <rect key="frame" x="5" y="265" width="484" height="17"/>
+                                        <rect key="frame" x="5" y="363.5" width="189" height="17"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="o1w-1h-8FD">
                                             <dateFormatter key="formatter" dateStyle="long" timeStyle="short" id="AaJ-Pc-CPn"/>
@@ -136,19 +131,16 @@
                                             <color key="textColor" red="0.25749684343434343" green="0.25749684343434343" blue="0.25749684343434343" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
-                                        <connections>
-                                            <binding destination="baT-kB-gnA" name="value" keyPath="selection.startDate" id="yYC-Jm-Tkw"/>
-                                        </connections>
                                     </textField>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="PbZ-id-MSK">
-                                        <rect key="frame" x="7" y="28" width="480" height="233"/>
+                                        <rect key="frame" x="7" y="136" width="185" height="223.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Eh0-mc-fIc">
-                                            <rect key="frame" x="1" y="0.0" width="478" height="232"/>
+                                            <rect key="frame" x="1" y="0.0" width="183" height="222.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="1CM-LO-lbg" id="iGK-wJ-jqC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="478" height="209"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="199.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -166,8 +158,11 @@
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            <connections>
+                                                                <binding destination="SXB-AK-hXm" name="value" keyPath="arrangedObjects.title" id="Twd-nc-bob"/>
+                                                            </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="241" minWidth="40" maxWidth="1000" id="bUD-GQ-np2">
+                                                        <tableColumn width="83" minWidth="40" maxWidth="1000" id="bUD-GQ-np2">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -181,6 +176,10 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="6ia-XZ-HPQ" id="7uf-ok-yfo"/>
+                                                        <outlet property="delegate" destination="6ia-XZ-HPQ" id="qST-NJ-l5A"/>
+                                                    </connections>
                                                 </tableView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -194,37 +193,56 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="1CM-LO-lbg">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" id="hWg-dn-6lM">
-                                        <rect key="frame" x="400" y="5" width="87" height="19"/>
+                                        <rect key="frame" x="105" y="114" width="87" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4T-yN-wQf">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="remove:" target="2Zv-Y0-MtE" id="VYF-6E-eqs"/>
-                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canRemove" id="TtH-5v-5Aw"/>
+                                            <action selector="remove:" target="SXB-AK-hXm" id="YiY-LK-DaG"/>
+                                            <binding destination="SXB-AK-hXm" name="enabled" keyPath="canRemove" id="WZ1-29-tVU"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" id="stM-10-Zq2">
-                                        <rect key="frame" x="326" y="5" width="66" height="19"/>
+                                        <rect key="frame" x="31" y="114" width="66" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Add Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qSa-CH-9dc">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
-                                            <connections>
-                                                <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="hTd-t2-WBR"/>
-                                            </connections>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="add:" target="2Zv-Y0-MtE" id="7No-1q-6qV"/>
-                                            <binding destination="2Zv-Y0-MtE" name="enabled" keyPath="canAdd" id="jTJ-ln-VfK"/>
+                                            <action selector="add:" target="SXB-AK-hXm" id="uJp-zf-bdZ"/>
+                                            <binding destination="SXB-AK-hXm" name="enabled2" keyPath="canAdd" previousBinding="doV-wh-woi" id="mD2-fT-34Y">
+                                                <dictionary key="options">
+                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                                </dictionary>
+                                            </binding>
+                                            <binding destination="lmC-z7-eVR" name="enabled" keyPath="canAdd" id="doV-wh-woi"/>
                                         </connections>
                                     </button>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="m3F-lf-MXP">
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="u0z-Zw-CEV"/>
+                                    </imageView>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="DNW-5K-CmS">
+                                        <rect key="frame" x="1" y="0.0" width="198" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="yKu-YJ-d9E">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                             </customView>
                         </subviews>
@@ -236,25 +254,47 @@
                 </subviews>
             </view>
             <connections>
-                <binding destination="-3" name="title" keyPath="keyWindow.document.fileURL" id="R9H-VG-lOi"/>
+                <binding destination="dkC-vT-f3f" name="title" keyPath="selection.displayName" id="NuD-8t-FyY"/>
             </connections>
-            <point key="canvasLocation" x="150" y="69"/>
+            <point key="canvasLocation" x="2.5" y="116"/>
         </window>
-        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="baT-kB-gnA" userLabel="Days" customClass="CKNTimeArrayController" customModule="CruelKeyNote" customModuleProvider="target">
+        <objectController objectClassName="Document" automaticallyPreparesContent="YES" id="dkC-vT-f3f" userLabel="Document Controller">
             <connections>
-                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="KpO-t4-8PV"/>
-            </connections>
-        </arrayController>
-        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="2Zv-Y0-MtE" userLabel="Events">
-            <connections>
-                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="cbz-lS-Xcm"/>
-                <binding destination="baT-kB-gnA" name="contentArray" keyPath="selection.events" id="OCq-Cb-NzU">
+                <binding destination="-2" name="contentObject" keyPath="document" id="dVG-25-mG5">
                     <dictionary key="options">
-                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
-                        <string key="NSValueTransformerName">OrderedSetArrayValueTransformer</string>
+                        <bool key="NSValidatesImmediately" value="YES"/>
                     </dictionary>
                 </binding>
             </connections>
+        </objectController>
+        <objectController objectClassName="NSArrayController" automaticallyPreparesContent="YES" id="QxD-Vl-e9D" userLabel="Day Controller Object">
+            <connections>
+                <binding destination="dkC-vT-f3f" name="contentObject" keyPath="selection.daysController" id="fHO-Sh-Pp3"/>
+            </connections>
+        </objectController>
+        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="lmC-z7-eVR" userLabel="Days">
+            <connections>
+                <binding destination="QxD-Vl-e9D" name="contentArray" keyPath="selection.content" id="zN7-Zv-2x1"/>
+                <binding destination="QxD-Vl-e9D" name="managedObjectContext" keyPath="selection.managedObjectContext" id="5OU-gm-NNd"/>
+            </connections>
         </arrayController>
+        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="SXB-AK-hXm" userLabel="Events">
+            <connections>
+                <binding destination="lmC-z7-eVR" name="contentArray" keyPath="selection.events" id="raP-Is-gEY">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                        <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
+                        <string key="NSValueTransformerName">OrderedSetArrayValueTransformer</string>
+                    </dictionary>
+                </binding>
+                <binding destination="QxD-Vl-e9D" name="managedObjectContext" keyPath="selection.managedObjectContext" id="0ag-HY-xIg"/>
+            </connections>
+        </arrayController>
+        <customObject id="6ia-XZ-HPQ" customClass="DragableOrderedSetTableViewDelegate" customModule="CruelKeyNote" customModuleProvider="target">
+            <connections>
+                <outlet property="arrayController" destination="SXB-AK-hXm" id="0bO-eM-p9H"/>
+                <outlet property="tableView" destination="iGK-wJ-jqC" id="dLC-nA-Iow"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

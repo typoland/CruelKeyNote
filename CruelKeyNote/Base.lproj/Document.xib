@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="CruelKeyNote" customModuleProvider="target">
             <connections>
                 <outlet property="daysController" destination="dQk-sK-cRM" id="wtR-M9-4Rl"/>
+                <outlet property="eventsController" destination="YOH-Im-1P1" id="fHP-GV-qzo"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -15,120 +16,32 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="133" y="235" width="502" height="610"/>
+            <rect key="contentRect" x="133" y="235" width="502" height="272"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
-                <rect key="frame" x="0.0" y="0.0" width="502" height="610"/>
+                <rect key="frame" x="0.0" y="0.0" width="502" height="272"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-S8-Xhw" customClass="CKNMainView" customModule="CruelKeyNote" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="245" width="502" height="365"/>
-                        <connections>
-                            <outlet property="imageView" destination="0Ch-8k-2PZ" id="9ft-O8-Ojr"/>
-                        </connections>
+                    <customView id="jWb-S8-Xhw" customClass="CKNMainView" customModule="CruelKeyNote" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="66" width="502" height="186"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ch-8k-2PZ">
-                        <rect key="frame" x="9" y="520" width="484" height="77"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EJ2-5m-ZVb"/>
-                    </imageView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9y3-az-NRf">
-                        <rect key="frame" x="434" y="218" width="59" height="19"/>
-                        <buttonCell key="cell" type="roundRect" title="Remove" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LQb-lH-YL6">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="cellTitle"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="remove:" target="dQk-sK-cRM" id="X0R-up-pCI"/>
-                            <binding destination="dQk-sK-cRM" name="enabled" keyPath="canRemove" id="19b-kr-y5v"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-t1-x6J">
-                        <rect key="frame" x="367" y="218" width="59" height="19"/>
-                        <buttonCell key="cell" type="roundRect" title="Add" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c8s-fI-SqK">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="cellTitle"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="add:" target="dQk-sK-cRM" id="DHe-FI-XMM"/>
-                            <binding destination="dQk-sK-cRM" name="enabled" keyPath="canAdd" id="IWK-a7-4m8"/>
-                        </connections>
-                    </button>
-                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-Q0-LQu">
-                        <rect key="frame" x="9" y="102" width="240" height="135"/>
-                        <clipView key="contentView" ambiguous="YES" id="gyb-HB-yk6">
-                            <rect key="frame" x="1" y="23" width="238" height="111"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="dAV-LA-EmS" id="VqZ-Nc-Ju4">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="111"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                                    <tableColumns>
-                                        <tableColumn width="116" minWidth="40" maxWidth="1000" id="BFx-Ur-Kdf">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                            </tableHeaderCell>
-                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="sQ5-MB-e6z">
-                                                <dateFormatter key="formatter" dateStyle="short" timeStyle="short" id="xu1-6I-nbI"/>
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                            <connections>
-                                                <binding destination="dQk-sK-cRM" name="value" keyPath="arrangedObjects.startDate" id="VMV-4c-mGD"/>
-                                            </connections>
-                                        </tableColumn>
-                                        <tableColumn width="116" minWidth="40" maxWidth="1000" id="2s5-w5-3gS">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                            </tableHeaderCell>
-                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="abK-qD-3wH">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="PPA-dm-u5f"/>
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                            <connections>
-                                                <binding destination="dQk-sK-cRM" name="value" keyPath="arrangedObjects.duration" id="ZUR-Ca-G0E"/>
-                                            </connections>
-                                        </tableColumn>
-                                    </tableColumns>
-                                </tableView>
-                            </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="0hr-Ee-V9H">
-                            <rect key="frame" x="1" y="119" width="223" height="15"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="m77-6q-oVD">
-                            <rect key="frame" x="224" y="17" width="15" height="102"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <tableHeaderView key="headerView" id="dAV-LA-EmS">
-                            <rect key="frame" x="0.0" y="0.0" width="238" height="23"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </tableHeaderView>
-                    </scrollView>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
-            <point key="canvasLocation" x="930" y="162"/>
+            <point key="canvasLocation" x="930" y="-7"/>
         </window>
         <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="dQk-sK-cRM" userLabel="Days" customClass="CKNTimeArrayController" customModule="CruelKeyNote" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="jDD-mF-oqv"/>
+            </connections>
+        </arrayController>
+        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="YOH-Im-1P1" userLabel="Events">
+            <connections>
+                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="gzS-fe-eA7"/>
             </connections>
         </arrayController>
     </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B208D3D71C9308690057804D /* DragableOrderedSetTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3D61C9308690057804D /* DragableOrderedSetTableViewDelegate.swift */; };
 		B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */; };
 		B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85661ABDD7CD00F32FC7 /* Document.swift */; };
 		B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85681ABDD7CD00F32FC7 /* Document.xib */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B208D3D61C9308690057804D /* DragableOrderedSetTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableOrderedSetTableViewDelegate.swift; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* CruelKeyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruelKeyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,13 +105,14 @@
 			children = (
 				B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */,
 				B28C85661ABDD7CD00F32FC7 /* Document.swift */,
-				B28C85681ABDD7CD00F32FC7 /* Document.xib */,
 				B28C858B1ABDF36D00F32FC7 /* CKNTimeArrayController.swift */,
 				B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */,
-				B28C85971ABE269B00F32FC7 /* CKNEditData.xib */,
 				B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */,
 				B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */,
 				B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */,
+				B28C85681ABDD7CD00F32FC7 /* Document.xib */,
+				B28C85971ABE269B00F32FC7 /* CKNEditData.xib */,
+				B208D3D61C9308690057804D /* DragableOrderedSetTableViewDelegate.swift */,
 				B2F81B311C8F7F880017022F /* OrderedSetArrayValueTransformer.swift */,
 				B28C856B1ABDD7CD00F32FC7 /* Document.xcdatamodeld */,
 				B28C85621ABDD7CD00F32FC7 /* Supporting Files */,
@@ -250,6 +253,7 @@
 				B2F81B371C907A830017022F /* Day+CoreDataProperties.swift in Sources */,
 				B28C856D1ABDD7CD00F32FC7 /* Document.xcdatamodeld in Sources */,
 				B2F81B321C8F7F880017022F /* OrderedSetArrayValueTransformer.swift in Sources */,
+				B208D3D71C9308690057804D /* DragableOrderedSetTableViewDelegate.swift in Sources */,
 				B28C859C1ABE3DE700F32FC7 /* CKNHudPanelController.swift in Sources */,
 				B28C858C1ABDF36D00F32FC7 /* CKNTimeArrayController.swift in Sources */,
 				B2F81B381C907A830017022F /* Day.swift in Sources */,
