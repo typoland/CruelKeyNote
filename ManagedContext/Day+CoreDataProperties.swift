@@ -2,7 +2,7 @@
 //  Day+CoreDataProperties.swift
 //  CruelKeyNote
 //
-//  Created by Łukasz Dziedzic on 09/03/16.
+//  Created by Łukasz Dziedzic on 11/03/16.
 //  Copyright © 2016 Łukasz Dziedzic. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

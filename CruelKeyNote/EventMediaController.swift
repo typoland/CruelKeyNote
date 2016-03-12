@@ -1,5 +1,5 @@
 //
-//  Day.swift
+//  EventMediaController.swift
 //  CruelKeyNote
 //
 //  Created by Łukasz Dziedzic on 11/03/16.
@@ -7,11 +7,3 @@
 //
 
 import Foundation
-import CoreData
-
-@objc(Day)
-class Day: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
-}

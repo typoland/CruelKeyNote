@@ -13,39 +13,38 @@ class Document: NSPersistentDocument {
     @IBOutlet weak var daysController: CKNTimeArrayController!
     @IBOutlet weak var eventsController: NSArrayController!
    
-    /*
-    func windowDidBecomeKey(notification:NSNotification)
-    {
-        hudPanelController.doc = self
-        if hudPanelController.daysTable != nil {
-            hudPanelController.daysTable!.reloadData()
-        }
-        print("windowDidBecameKey \(self)\(hudPanelController)")
-
-    }
-    func windowDidResignKey(notification:NSNotification) {
-        hudPanelController.doc = nil
-        
-    if hudPanelController.daysTable != nil {
-            hudPanelController.daysTable!.reloadData()
-        }
-        print("windowDidResignKey: \(self)\(hudPanelController)")
-
-    }
-        */
+    
     
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
     }
-
+    
+    override func canCloseDocumentWithDelegate(delegate: AnyObject, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
+        print("delegate\(delegate)")
+        print("sholudCloseSelector \(shouldCloseSelector)")
+        print("conextInfo \(contextInfo)")
+        super.canCloseDocumentWithDelegate(delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
+    }
+    
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         //print("Panel \(self.managedObjectContext)")
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
+       
+        let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
+        print(delegate)
+        delegate.addObserver(self, forKeyPath: "hudIsVisible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+        
         
     }
-
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        Swift.print(keyPath)
+    }
+    func hudChangedVisibility (notification:NSNotification) {
+        "changed \(notification)"
+    }
     override class func autosavesInPlace() -> Bool {
         return true
     }
@@ -55,6 +54,7 @@ class Document: NSPersistentDocument {
         // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
         return "Document"
     }
-
-
+    
+    
+    
 }

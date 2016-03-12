@@ -29,6 +29,7 @@ class CKNMainView:NSView {
 
     override func drawRect(dirtyRect: NSRect) {
         //println("View Updated")
+        //Swift.print("Time passing...")
         NSColor.blackColor().set()
         NSRectFill(dirtyRect)
         now = NSDate()
@@ -43,6 +44,7 @@ class CKNMainView:NSView {
                 Swift.print("day \(day)")
                 duration = day.valueForKey("duration") as! NSTimeInterval
                 totalTime = totalTime.dateByAddingTimeInterval(duration)
+                
                 
             }
         }

@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.swift
 //  CruelKeyNote
 //
-//  Created by Łukasz Dziedzic on 09/03/16.
+//  Created by Łukasz Dziedzic on 11/03/16.
 //  Copyright © 2016 Łukasz Dziedzic. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,11 +14,11 @@ import CoreData
 
 extension Event {
 
-    @NSManaged var caption: String?
+    @NSManaged var media: NSData?
     @NSManaged var duration: Float
-    @NSManaged var id: Int16
-    @NSManaged var imageName: String?
+    @NSManaged var mediaName: String?
     @NSManaged var title: String?
+    @NSManaged var mediaType: String?
     @NSManaged var day: Day?
 
 }
