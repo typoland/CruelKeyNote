@@ -20,12 +20,6 @@ class Document: NSPersistentDocument {
         // Add your subclass-specific initialization here.
     }
     
-    override func canCloseDocumentWithDelegate(delegate: AnyObject, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
-        print("delegate\(delegate)")
-        print("sholudCloseSelector \(shouldCloseSelector)")
-        print("conextInfo \(contextInfo)")
-        super.canCloseDocumentWithDelegate(delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
-    }
     
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)

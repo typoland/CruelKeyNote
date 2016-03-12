@@ -11,7 +11,9 @@ import AppKit
 
 class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     
+    @IBOutlet weak var daysController:NSArrayController!
     @IBOutlet weak var eventsController:NSArrayController!
+    var managedObjectContext:NSManagedObjectContext!
     
     @IBAction func closePanel(sender:AnyObject) {
         self.document = nil
@@ -19,6 +21,7 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     }
   
    func windowShouldClose(sender: AnyObject) -> Bool {
+    print ("close")
     //self.document?.canCloseDocumentWithDelegate(self, shouldCloseSelector: "closeIt:", contextInfo: nil)
     return true
     /*print(notification)

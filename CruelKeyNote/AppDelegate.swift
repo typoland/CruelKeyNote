@@ -33,8 +33,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath != nil {
         switch keyPath! {
-        case "mainWindow" : hudPanelController.document = NSApplication.sharedApplication().mainWindow?.windowController?.document as? Document
-            //print("WindowChanged")
+        case "mainWindow" :
+            let document:Document? = (NSApplication.sharedApplication().mainWindow?.windowController?.document as? Document)
+            //print(hudPanelController.daysController?.content)
+            hudPanelController.managedObjectContext = document?.managedObjectContext
+            if  hudPanelController.daysController != nil {
+            print (hudPanelController.daysController)
+            hudPanelController.daysController?.managedObjectContext = document?.managedObjectContext
+            }
+            print("WindowChanged")
         //case "window":
            // hudIsVisible = hudPanelController.window != nil
             //print ("Hud changed \(hudIsVisible)")
