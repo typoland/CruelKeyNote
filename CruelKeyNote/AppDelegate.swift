@@ -16,6 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        //[[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"de", @"en", @"fr", nil] forKey:@"AppleLanguages"];
+        //[[NSUserDefaults standardUserDefaults] synchronize]; //to make the change immediate
+        NSUserDefaults.standardUserDefaults().setObject(["pl", "en", "fr"], forKey: "AppleLanguages")
+        //forKey:@"AppleLanguages"];
+        NSUserDefaults.standardUserDefaults().synchronize()//; //to make the change immediate
         
         let app:NSApplication = NSApplication.sharedApplication()
        app.addObserver(self, forKeyPath: "mainWindow", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)

@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="502" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
-                            <outlet property="daysController" destination="dQk-sK-cRM" id="Eqa-5y-sLw"/>
+                            <outlet property="daysController" destination="dQk-sK-cRM" id="fUW-u6-5xN"/>
                         </connections>
                     </customView>
                 </subviews>
@@ -37,7 +37,7 @@
             </connections>
             <point key="canvasLocation" x="930" y="-7"/>
         </window>
-        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="dQk-sK-cRM" userLabel="Days" customClass="CKNTimeArrayController" customModule="CruelKeyNote" customModuleProvider="target">
+        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="dQk-sK-cRM" userLabel="Days" customClass="CKNDaysController" customModule="CruelKeyNote" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="jDD-mF-oqv"/>
             </connections>

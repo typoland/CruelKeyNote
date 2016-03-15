@@ -18,5 +18,5 @@ extension Day {
     @NSManaged var startDate: NSDate
     @NSManaged var title: String?
     @NSManaged var events: NSOrderedSet?
-
+    
 }

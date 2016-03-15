@@ -333,13 +333,13 @@
                 <binding destination="dkC-vT-f3f" name="contentObject" keyPath="selection.daysController" id="fHO-Sh-Pp3"/>
             </connections>
         </objectController>
-        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="lmC-z7-eVR" userLabel="Days">
+        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="lmC-z7-eVR" userLabel="Days">
             <connections>
                 <binding destination="QxD-Vl-e9D" name="contentArray" keyPath="selection.content" id="zN7-Zv-2x1"/>
                 <binding destination="QxD-Vl-e9D" name="managedObjectContext" keyPath="selection.managedObjectContext" id="5OU-gm-NNd"/>
             </connections>
         </arrayController>
-        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="SXB-AK-hXm" userLabel="Events">
+        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="SXB-AK-hXm" userLabel="Events">
             <connections>
                 <binding destination="lmC-z7-eVR" name="contentArray" keyPath="selection.events" id="raP-Is-gEY">
                     <dictionary key="options">
