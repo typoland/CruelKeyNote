@@ -15,7 +15,7 @@ import CoreData
 extension Event {
 
     @NSManaged var media: NSData?
-    @NSManaged var duration: Float
+    @NSManaged var duration: Double
     @NSManaged var mediaName: String?
     @NSManaged var title: String?
     @NSManaged var mediaType: String?

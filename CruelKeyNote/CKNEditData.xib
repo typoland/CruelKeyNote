@@ -22,22 +22,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" id="LJj-rr-4Nx">
-                        <rect key="frame" x="0.0" y="0.0" width="199" height="664"/>
+                        <rect key="frame" x="0.0" y="0.0" width="199" height="680"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="sUG-jW-PZd">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="225.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="199" height="235"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="sdi-J8-6yY">
-                                        <rect key="frame" x="0.0" y="27" width="199" height="199"/>
+                                        <rect key="frame" x="0.0" y="27" width="199" height="208"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="13B-4d-kEn">
-                                            <rect key="frame" x="1" y="0.0" width="197" height="198"/>
+                                            <rect key="frame" x="1" y="0.0" width="197" height="207"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="oOY-Ul-INo" id="PoQ-2t-t3a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="175"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="184"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -67,12 +67,18 @@
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
                                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="ffd-6J-piP">
-                                                                <dateFormatter key="formatter" timeStyle="short" doesRelativeDateFormatting="YES" id="BNI-gp-QXG"/>
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            <connections>
+                                                                <binding destination="lmC-z7-eVR" name="value" keyPath="arrangedObjects.duration" id="Bf5-Qa-n7k">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">TimeIntervalTransformer</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
                                                         </tableColumn>
                                                     </tableColumns>
                                                 </tableView>
@@ -83,7 +89,7 @@
                                             <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="xr6-jz-ImM">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="xr6-jz-ImM">
                                             <rect key="frame" x="182" y="23" width="16" height="18.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -119,7 +125,7 @@
                                 </subviews>
                             </customView>
                             <customView id="J6k-9s-GHO">
-                                <rect key="frame" x="0.0" y="226.5" width="199" height="283.5"/>
+                                <rect key="frame" x="0.0" y="236" width="199" height="283.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Wxk-7i-F4e">
@@ -174,6 +180,13 @@
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            <connections>
+                                                                <binding destination="SXB-AK-hXm" name="value" keyPath="arrangedObjects.duration" id="vct-jE-4Sh">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">TimeIntervalTransformer</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
                                                         </tableColumn>
                                                     </tableColumns>
                                                     <connections>
@@ -213,12 +226,12 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="remove:" target="SXB-AK-hXm" id="YiY-LK-DaG"/>
-                                            <binding destination="SXB-AK-hXm" name="enabled" keyPath="canRemove" id="WZ1-29-tVU"/>
                                             <binding destination="lmC-z7-eVR" name="hidden" keyPath="canRemove" previousBinding="WZ1-29-tVU" id="4pf-0o-xuS">
                                                 <dictionary key="options">
                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                 </dictionary>
                                             </binding>
+                                            <binding destination="SXB-AK-hXm" name="enabled" keyPath="canRemove" id="WZ1-29-tVU"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" id="stM-10-Zq2">
@@ -230,6 +243,7 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="add:" target="SXB-AK-hXm" id="uJp-zf-bdZ"/>
+                                            <binding destination="lmC-z7-eVR" name="enabled" keyPath="canAdd" id="doV-wh-woi"/>
                                             <binding destination="SXB-AK-hXm" name="enabled2" keyPath="canAdd" previousBinding="doV-wh-woi" id="mD2-fT-34Y">
                                                 <dictionary key="options">
                                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -238,7 +252,6 @@
                                                     <integer key="NSNullPlaceholder" value="-1"/>
                                                 </dictionary>
                                             </binding>
-                                            <binding destination="lmC-z7-eVR" name="enabled" keyPath="canAdd" id="doV-wh-woi"/>
                                             <binding destination="lmC-z7-eVR" name="hidden" keyPath="canRemove" previousBinding="mD2-fT-34Y" id="1As-ZO-NeK">
                                                 <dictionary key="options">
                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -249,11 +262,11 @@
                                 </subviews>
                             </customView>
                             <customView id="sKw-UR-Zb1">
-                                <rect key="frame" x="0.0" y="511" width="199" height="153"/>
+                                <rect key="frame" x="0.0" y="520.5" width="199" height="159.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView canDrawConcurrently="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Cf8-Ba-29d">
-                                        <rect key="frame" x="0.0" y="33" width="199" height="120"/>
+                                        <rect key="frame" x="0.0" y="33" width="199" height="126.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" id="QKE-PC-LqU"/>
                                         <connections>
@@ -298,17 +311,6 @@
                             <real value="250"/>
                         </holdingPriorities>
                     </splitView>
-                    <button verticalHuggingPriority="750" id="AWz-BF-6NC">
-                        <rect key="frame" x="7" y="663" width="19" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="inline" bezelStyle="inline" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="PSp-Lh-8Wh">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="smallSystemBold"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="closePanel:" target="-2" id="OPF-6A-CnX"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <connections>
@@ -356,7 +358,4 @@
             </connections>
         </customObject>
     </objects>
-    <resources>
-        <image name="NSQuickLookTemplate" width="19" height="12"/>
-    </resources>
 </document>

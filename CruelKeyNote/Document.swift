@@ -34,6 +34,8 @@ class Document: NSPersistentDocument {
        
         let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
         print(delegate)
+        let panel = delegate.hudPanelController
+        //panel.addObserver(self, forKeyPath: "window.visible", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
         delegate.addObserver(self, forKeyPath: "hudIsVisible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
         
         

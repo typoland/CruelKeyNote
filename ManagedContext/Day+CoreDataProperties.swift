@@ -14,8 +14,8 @@ import CoreData
 
 extension Day {
 
-    @NSManaged var duration: Float
-    @NSManaged var startDate: NSTimeInterval
+    @NSManaged var duration: Double
+    @NSManaged var startDate: NSDate
     @NSManaged var title: String?
     @NSManaged var events: NSOrderedSet?
 

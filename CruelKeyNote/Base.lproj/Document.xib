@@ -26,6 +26,9 @@
                     <customView id="jWb-S8-Xhw" customClass="CKNMainView" customModule="CruelKeyNote" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="502" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="daysController" destination="dQk-sK-cRM" id="Eqa-5y-sLw"/>
+                        </connections>
                     </customView>
                 </subviews>
             </view>

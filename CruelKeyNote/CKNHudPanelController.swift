@@ -14,18 +14,21 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     @IBOutlet weak var eventsController:NSArrayController!
     
     @IBAction func closePanel(sender:AnyObject) {
+        print ("ClosePanel" )
         self.document = nil
         self.window?.close()
     }
   
    func windowShouldClose(sender: AnyObject) -> Bool {
     //self.document?.canCloseDocumentWithDelegate(self, shouldCloseSelector: "closeIt:", contextInfo: nil)
+    print ("WindowShouldClose")
+    self.document = nil
     return true
     /*print(notification)
     
         print("closing")
         self.setDocumentEdited( false)
-        self.document = nil
+    
         //self.window
         //super.window?.close()
 */

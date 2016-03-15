@@ -14,6 +14,7 @@
 		B208D3E01C9367640057804D /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3DC1C9367640057804D /* Event+CoreDataProperties.swift */; };
 		B208D3E11C9367640057804D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3DD1C9367640057804D /* Event.swift */; };
 		B208D3E31C9375400057804D /* DataToImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3E21C9375400057804D /* DataToImageTransformer.swift */; };
+		B208D3E51C944CB50057804D /* TimeIntervalTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3E41C944CB50057804D /* TimeIntervalTransformer.swift */; };
 		B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */; };
 		B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85661ABDD7CD00F32FC7 /* Document.swift */; };
 		B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85681ABDD7CD00F32FC7 /* Document.xib */; };
@@ -46,6 +47,7 @@
 		B208D3DC1C9367640057804D /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "ManagedContext/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B208D3DD1C9367640057804D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ManagedContext/Event.swift; sourceTree = "<group>"; };
 		B208D3E21C9375400057804D /* DataToImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataToImageTransformer.swift; sourceTree = "<group>"; };
+		B208D3E41C944CB50057804D /* TimeIntervalTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTransformer.swift; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* CruelKeyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruelKeyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				B208D3D81C9365B10057804D /* EventMediaController.swift */,
 				B208D3D61C9308690057804D /* DragableOrderedSetTableViewDelegate.swift */,
 				B208D3E21C9375400057804D /* DataToImageTransformer.swift */,
+				B208D3E41C944CB50057804D /* TimeIntervalTransformer.swift */,
 				B2F81B311C8F7F880017022F /* OrderedSetArrayValueTransformer.swift */,
 				B28C856B1ABDD7CD00F32FC7 /* Document.xcdatamodeld */,
 				B28C85621ABDD7CD00F32FC7 /* Supporting Files */,
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28C856D1ABDD7CD00F32FC7 /* Document.xcdatamodeld in Sources */,
+				B208D3E51C944CB50057804D /* TimeIntervalTransformer.swift in Sources */,
 				B208D3D91C9365B10057804D /* EventMediaController.swift in Sources */,
 				B2F81B321C8F7F880017022F /* OrderedSetArrayValueTransformer.swift in Sources */,
 				B208D3D71C9308690057804D /* DragableOrderedSetTableViewDelegate.swift in Sources */,
