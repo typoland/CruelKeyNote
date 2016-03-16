@@ -14,14 +14,16 @@ class Day: NSManagedObject {
 // Insert code here to add functionality to your managed object subclass
     
     func eventTimes(event:Event) -> (NSDate, NSDate) {
+        
         var duration:NSTimeInterval = 0
-        for loopEvent:Event in events?.array as! [Event] {
-            if loopEvent === event {
+        
+        for searchEvent:Event in events?.array as! [Event] {
+            if searchEvent === event {
+                print(duration, event.duration)
                 return (NSDate(timeInterval: duration, sinceDate: startDate), NSDate(timeInterval: duration+event.duration, sinceDate: startDate))
-            } else {
-                duration += event.duration
-                
+ 
             }
+            duration += searchEvent.duration
         }
         return (NSDate(), NSDate())
     }

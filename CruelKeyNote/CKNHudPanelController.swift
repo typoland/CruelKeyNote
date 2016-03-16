@@ -12,6 +12,7 @@ import AppKit
 class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     
     @IBOutlet weak var eventsController:NSArrayController!
+    @IBOutlet weak var daysController:NSArrayController!
     
     @IBAction func closePanel(sender:AnyObject) {
         print ("ClosePanel" )

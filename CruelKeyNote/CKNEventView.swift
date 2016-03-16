@@ -9,9 +9,12 @@
 import Foundation
 import AppKit
 var CKNCurrentEvent:Event? = nil
+let CKNEventViewClickOn = "com.typoland.cruelKeyNote.eventClickOn"
+let CKNEventViewClickOff = "com.typoland.cruelKeyNote.eventClickOff"
 
 class CKNEventView:NSView {
     var event:Event?
+    var eventClicked = false
     init (withEvent:Event) {
         //Swift.print("DayViewInit")
         
@@ -26,14 +29,26 @@ class CKNEventView:NSView {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
     }
+    override func mouseDown(theEvent: NSEvent) {
+        NSNotificationCenter.defaultCenter().postNotificationName(CKNEventViewClickOn, object: self.event)
+        eventClicked = true
+    }
+    override func mouseUp(theEvent: NSEvent) {
+        NSNotificationCenter.defaultCenter().postNotificationName(CKNEventViewClickOn, object: nil)
+        eventClicked = false
+    }
+    
     override func drawRect(dirtyRect: NSRect) {
         //NSColor.blueColor().set()
         
         var stringAttr:[String:AnyObject] = [String:AnyObject]()
         if event != nil {
+            
             let (eventStartTime, eventEndTime) = event!.day!.eventTimes(event!)
-           // Swift.print(eventStartTime, eventEndTime, NSDate())
-            if NSDate().compare(eventStartTime) == NSComparisonResult.OrderedAscending {
+           Swift.print(eventStartTime, eventEndTime)
+            if eventClicked {
+                NSColor.redColor().set()
+            } else if NSDate().compare(eventStartTime) == NSComparisonResult.OrderedAscending {
                 NSColor.lightGrayColor().set()
                 stringAttr[NSForegroundColorAttributeName] = NSColor.blackColor()
             } else if (NSDate().compare(eventStartTime) == NSComparisonResult.OrderedDescending) && (NSDate().compare(eventEndTime) == NSComparisonResult.OrderedAscending)  {
@@ -41,18 +56,10 @@ class CKNEventView:NSView {
                 //let currentEventDuration = event!.duration
                 NSColor.whiteColor().set()
                 CKNCurrentEvent = event
-                
             } else {
                 NSColor.darkGrayColor().set()
             }
-                /*
-                stringAttr[NSFontAttributeName] = NSFont(name: "LatoOT Light", size: 24)
-                stringAttr[NSForegroundColorAttributeName] = NSColor.whiteColor()
-                //Swift.print("event", event)
-                if let title:NSString = event!.title  {
-                    //Swift.print("Let's try", title.className)
-                    title.drawAtPoint( NSMakePoint(0, 10), withAttributes: stringAttr)
-                  */
+               
                     
             
             

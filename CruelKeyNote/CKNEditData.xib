@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CKNHudPanelController" customModule="CruelKeyNote" customModuleProvider="target">
             <connections>
+                <outlet property="daysController" destination="lmC-z7-eVR" id="LgI-7O-ZLj"/>
                 <outlet property="eventsController" destination="SXB-AK-hXm" id="weF-9m-G5N"/>
                 <outlet property="window" destination="IjH-Ig-YSB" id="aW9-yR-Zpo"/>
             </connections>
@@ -330,12 +331,20 @@
         </objectController>
         <objectController objectClassName="NSArrayController" automaticallyPreparesContent="YES" id="QxD-Vl-e9D" userLabel="Day Controller Object">
             <connections>
-                <binding destination="dkC-vT-f3f" name="contentObject" keyPath="selection.daysController" id="fHO-Sh-Pp3"/>
+                <binding destination="dkC-vT-f3f" name="contentObject" keyPath="selection.daysController" id="vG5-Mm-YXh">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                    </dictionary>
+                </binding>
             </connections>
         </objectController>
         <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="lmC-z7-eVR" userLabel="Days">
             <connections>
-                <binding destination="QxD-Vl-e9D" name="contentArray" keyPath="selection.content" id="zN7-Zv-2x1"/>
+                <binding destination="QxD-Vl-e9D" name="contentArray" keyPath="selection.content" id="lJY-NS-C4C">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                    </dictionary>
+                </binding>
                 <binding destination="QxD-Vl-e9D" name="managedObjectContext" keyPath="selection.managedObjectContext" id="5OU-gm-NNd"/>
             </connections>
         </arrayController>
