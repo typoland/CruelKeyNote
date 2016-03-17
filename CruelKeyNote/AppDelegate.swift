@@ -50,6 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        let app:NSApplication = NSApplication.sharedApplication()
+        app.removeObserver(self, forKeyPath: "mainWindow")
+
+        
     }
     @IBAction func showPanel(sender:AnyObject) {
         print("OrderFront \(hudPanelController)")

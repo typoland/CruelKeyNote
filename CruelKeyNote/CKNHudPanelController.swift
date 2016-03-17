@@ -23,7 +23,7 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
    func windowShouldClose(sender: AnyObject) -> Bool {
     //self.document?.canCloseDocumentWithDelegate(self, shouldCloseSelector: "closeIt:", contextInfo: nil)
     print ("WindowShouldClose")
-    self.document = nil
+    //self.document = nil
     return true
     /*print(notification)
     

@@ -43,13 +43,20 @@ class CKNMainView:NSView {
         //imageView.setFrameSize(NSMakeSize( self.frame.size.width,  self.frame.size.height/2)
         //Swift.print("MainView Awake from nib")
         imageView.imageScaling = NSImageScaling.ScaleProportionallyUpOrDown
-        organizeLayout()
+        
         daysController!.addObserver(self, forKeyPath: "arrangedObjects", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
         daysController!.addObserver(self, forKeyPath: "arrangedObjects.events", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewChanged:", name: NSViewFrameDidChangeNotification, object: nil)
+        daysController!.addObserver(self, forKeyPath: "arrangedObjects.startDate", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewChanged:", name: NSWindowDidResizeNotification, object: nil)
+        //self.window?.addObserver(self, forKeyPath: "needsDisplay", options: NSKeyValueObservingOptions ([.New, .Old]), context: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "eventClicked:", name: CKNEventViewClickOn, object: nil)
         
+        organizeLayout()
+        rearangeDayViews()
+        
     }
+    
     func eventClicked (notification:NSNotification) {
         Swift.print(notification.object)
         let event:Event? = notification.object as? Event
@@ -71,6 +78,7 @@ class CKNMainView:NSView {
     }
     
     func viewChanged (notification:NSNotification) {
+        //Swift.print (notification.object)
         rearangeDayViews()
         progressBar.refreshSize()
         imageView.setFrameOrigin(NSMakePoint(0, 30))
@@ -78,7 +86,7 @@ class CKNMainView:NSView {
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        Swift.print("observing")
+        //Swift.print("observing", keyPath)
         organizeLayout()
         self.needsDisplay = true
     }
@@ -92,6 +100,7 @@ class CKNMainView:NSView {
     }
         
     func organizeLayout () {
+        //Swift.print("organize Layout")
         for subview in self.subviews {
             subview.removeFromSuperviewWithoutNeedingDisplay()
         }
@@ -122,7 +131,8 @@ class CKNMainView:NSView {
                 
             }
         }
-        NSNotificationCenter.defaultCenter().postNotificationName(NSViewFrameDidChangeNotification, object: self)
+        rearangeDayViews()
+        //NSNotificationCenter.defaultCenter().postNotificationName(NSViewFrameDidChangeNotification, object: self)
     }
         
     override func drawRect(rect: NSRect) {
@@ -132,21 +142,24 @@ class CKNMainView:NSView {
         
         
     }
+    
+    
     func rearangeDayViews() {
+        Swift.print("rearranging")
         let dayGap:CGFloat = 3
         let eventGap:CGFloat = 1
         let margin:CGFloat = 0
         
         var xPos:CGFloat = margin
         
-        let availableWidth = self.frame.width - dayGap*CGFloat(daysController.arrangedObjects.count-1)-2 * margin
+        if daysController != nil {
+        let availableWidth = self.frame.width - dayGap*CGFloat(daysController!.arrangedObjects.count-1)-2 * margin
+        //Swift.print(daysController!.arraySortedByKey("startDate") )
         for day in daysController!.arraySortedByKey("startDate") as! [Day] {
-            
             let width = availableWidth * CGFloat(day.duration) / CGFloat(daysController.totalDuration())
             if let view = dayViews[day] {
                 
                 let size = view.frame.size
-                //let origin = view.frame.origin
                 view.setFrameSize(NSMakeSize(width, size.height))
                 view.setFrameOrigin(NSMakePoint(xPos, self.frame.size.height - view.frame.size.height))
                 var eventXPos:CGFloat = 0
@@ -159,7 +172,10 @@ class CKNMainView:NSView {
                     eventXPos += eventWidth + eventGap
                 }
             }
+            
             xPos = xPos+width+dayGap
+           // }
+        }
         }
     }
         
@@ -167,24 +183,18 @@ class CKNMainView:NSView {
         CKNCurrentEvent = daysController?.currentEvent()
         if clickedEvent != nil {
             imageView.image = NSImage(data: clickedEvent!.media!)
-        } else if CKNCurrentEvent != nil {
+        } else if CKNCurrentEvent?.media != nil {
             imageView.image = NSImage(data: CKNCurrentEvent!.media!)
             progressBar.event = CKNCurrentEvent
             //Swift.print(imageView.image)
             
         } else {
             imageView.image = nil
+            progressBar.event = nil
         }
         self.needsDisplay=true
        
     }
-    /*
-    stringAttr[NSFontAttributeName] = NSFont(name: "LatoOT Light", size: 24)
-    stringAttr[NSForegroundColorAttributeName] = NSColor.whiteColor()
-    //Swift.print("event", event)
-    if let title:NSString = event!.title  {
-    //Swift.print("Let's try", title.className)
-    title.drawAtPoint( NSMakePoint(0, 10), withAttributes: stringAttr)
-    */
+    
 
 }

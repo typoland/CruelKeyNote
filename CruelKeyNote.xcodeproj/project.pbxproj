@@ -18,6 +18,7 @@
 		B208D3E71C97975C0057804D /* CKNDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3E61C97975C0057804D /* CKNDayView.swift */; };
 		B208D3E91C9856FF0057804D /* CKNEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3E81C9856FF0057804D /* CKNEventView.swift */; };
 		B208D3EB1C989CFA0057804D /* CKNEventProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */; };
+		B208D3F71C9B55630057804D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B208D3F61C9B55630057804D /* Fonts */; };
 		B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */; };
 		B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85661ABDD7CD00F32FC7 /* Document.swift */; };
 		B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85681ABDD7CD00F32FC7 /* Document.xib */; };
@@ -54,6 +55,7 @@
 		B208D3E61C97975C0057804D /* CKNDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNDayView.swift; sourceTree = "<group>"; };
 		B208D3E81C9856FF0057804D /* CKNEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventView.swift; sourceTree = "<group>"; };
 		B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventProgressBar.swift; sourceTree = "<group>"; };
+		B208D3F61C9B55630057804D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* CruelKeyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruelKeyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,13 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B28C85561ABDD7CD00F32FC7 = {
+		B208D3EC1C9B4BA30057804D /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
 				B208D3DA1C9367640057804D /* Day+CoreDataProperties.swift */,
 				B208D3DB1C9367640057804D /* Day.swift */,
 				B208D3DC1C9367640057804D /* Event+CoreDataProperties.swift */,
 				B208D3DD1C9367640057804D /* Event.swift */,
+			);
+			name = ManagedObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B28C85561ABDD7CD00F32FC7 = {
+			isa = PBXGroup;
+			children = (
 				B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */,
 				B28C857A1ABDD7CD00F32FC7 /* CruelKeyNoteTests */,
 				B28C85601ABDD7CD00F32FC7 /* Products */,
@@ -115,13 +125,15 @@
 		B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */ = {
 			isa = PBXGroup;
 			children = (
+				B208D3F61C9B55630057804D /* Fonts */,
+				B208D3EC1C9B4BA30057804D /* ManagedObjects */,
 				B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */,
 				B28C85661ABDD7CD00F32FC7 /* Document.swift */,
 				B28C858B1ABDF36D00F32FC7 /* CKNDaysController.swift */,
 				B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */,
 				B208D3E61C97975C0057804D /* CKNDayView.swift */,
-				B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */,
 				B208D3E81C9856FF0057804D /* CKNEventView.swift */,
+				B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */,
 				B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */,
 				B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */,
 				B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */,
@@ -245,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B208D3F71C9B55630057804D /* Fonts in Resources */,
 				B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */,
 				B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */,
 				B28C856F1ABDD7CD00F32FC7 /* Images.xcassets in Resources */,

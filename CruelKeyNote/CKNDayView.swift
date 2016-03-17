@@ -64,7 +64,7 @@ class CKNDayView:NSView {
             NSBezierPath(roundedRect: dayRect, xRadius: 5.0, yRadius: 5.0).fill()
             
             let attr:[String:AnyObject]  =  [
-                NSFontAttributeName : NSFont(name: "LatoOT Black", size: 24)!,
+                NSFontAttributeName : NSFont(name: "LatoOT-Bold", size: 24)!,
                 NSForegroundColorAttributeName : NSColor.whiteColor()]
             
             if let weekDay:NSString = dayFormatter.stringFromDate(thisDay.startDate) {

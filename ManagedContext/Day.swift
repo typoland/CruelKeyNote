@@ -11,6 +11,10 @@ import CoreData
 
 @objc(Day)
 class Day: NSManagedObject {
+    override func awakeFromInsert() {
+        self.startDate = NSDate()
+        self.duration = 0
+    }
 // Insert code here to add functionality to your managed object subclass
     
     func eventTimes(event:Event) -> (NSDate, NSDate) {
@@ -19,10 +23,8 @@ class Day: NSManagedObject {
         
         for searchEvent:Event in events?.array as! [Event] {
             if searchEvent === event {
-                print(duration, event.duration)
                 return (NSDate(timeInterval: duration, sinceDate: startDate), NSDate(timeInterval: duration+event.duration, sinceDate: startDate))
- 
-            }
+             }
             duration += searchEvent.duration
         }
         return (NSDate(), NSDate())

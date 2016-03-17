@@ -45,15 +45,12 @@ class CKNEventView:NSView {
         if event != nil {
             
             let (eventStartTime, eventEndTime) = event!.day!.eventTimes(event!)
-           Swift.print(eventStartTime, eventEndTime)
             if eventClicked {
                 NSColor.redColor().set()
             } else if NSDate().compare(eventStartTime) == NSComparisonResult.OrderedAscending {
                 NSColor.lightGrayColor().set()
                 stringAttr[NSForegroundColorAttributeName] = NSColor.blackColor()
             } else if (NSDate().compare(eventStartTime) == NSComparisonResult.OrderedDescending) && (NSDate().compare(eventEndTime) == NSComparisonResult.OrderedAscending)  {
-                //let currentEventStartTime = eventStartTime
-                //let currentEventDuration = event!.duration
                 NSColor.whiteColor().set()
                 CKNCurrentEvent = event
             } else {
@@ -67,11 +64,11 @@ class CKNEventView:NSView {
             let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
             paragraphStyle.maximumLineHeight = 14.0
             stringAttr[NSForegroundColorAttributeName] = NSColor.blackColor()
-            stringAttr[NSFontAttributeName] = NSFont(name: "ClanHeadNarrow Bold", size: 13.0)
+            stringAttr[NSFontAttributeName] = NSFont(name: "LatoOT Regular", size: 13.0)
             stringAttr[NSParagraphStyleAttributeName] = paragraphStyle
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "" //NSDateFormatterStyle.NoStyle
-            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            dateFormatter.dateFormat = "hh:mm" //NSDateFormatterStyle.NoStyle
+            //dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
             let eventTimeStartString:NSString = dateFormatter.stringFromDate(eventStartTime)
             

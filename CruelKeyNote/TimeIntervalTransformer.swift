@@ -16,6 +16,8 @@ func ^^ (radix: Int, power: Int) -> Int {
 
 @objc(TimeIntervalTransformer) class TimeIntervalTransformer : NSValueTransformer {
     
+    var format = "hh:mm"
+    
     override class func transformedValueClass() -> AnyClass {
         return NSString.self
     }
