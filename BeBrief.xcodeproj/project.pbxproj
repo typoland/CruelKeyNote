@@ -222,7 +222,7 @@
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
-				ORGANIZATIONNAME = "Łukasz Dziedzic";
+				ORGANIZATIONNAME = tyPoland;
 				TargetAttributes = {
 					B28C855E1ABDD7CD00F32FC7 = {
 						CreatedOnToolsVersion = 6.2;
