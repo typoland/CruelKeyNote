@@ -126,11 +126,11 @@
                                 </subviews>
                             </customView>
                             <customView id="J6k-9s-GHO">
-                                <rect key="frame" x="0.0" y="236" width="199" height="283.5"/>
+                                <rect key="frame" x="0.0" y="236" width="199" height="284"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Wxk-7i-F4e">
-                                        <rect key="frame" x="5" y="258" width="189" height="17"/>
+                                        <rect key="frame" x="5" y="258.5" width="189" height="17"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="o1w-1h-8FD">
                                             <dateFormatter key="formatter" dateStyle="long" timeStyle="short" id="AaJ-Pc-CPn"/>
@@ -140,14 +140,14 @@
                                         </textFieldCell>
                                     </textField>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="PbZ-id-MSK">
-                                        <rect key="frame" x="7" y="34" width="185" height="220"/>
+                                        <rect key="frame" x="7" y="34" width="185" height="220.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Eh0-mc-fIc">
-                                            <rect key="frame" x="1" y="0.0" width="183" height="219"/>
+                                            <rect key="frame" x="1" y="0.0" width="183" height="219.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="1CM-LO-lbg" id="iGK-wJ-jqC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="196"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="196.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -263,11 +263,11 @@
                                 </subviews>
                             </customView>
                             <customView id="sKw-UR-Zb1">
-                                <rect key="frame" x="0.0" y="520.5" width="199" height="159.5"/>
+                                <rect key="frame" x="0.0" y="521" width="199" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView canDrawConcurrently="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Cf8-Ba-29d">
-                                        <rect key="frame" x="0.0" y="33" width="199" height="126.5"/>
+                                        <rect key="frame" x="0.0" y="33" width="199" height="126"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" id="QKE-PC-LqU"/>
                                         <connections>
