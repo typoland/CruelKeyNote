@@ -19,11 +19,11 @@
 		B208D3E91C9856FF0057804D /* CKNEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3E81C9856FF0057804D /* CKNEventView.swift */; };
 		B208D3EB1C989CFA0057804D /* CKNEventProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */; };
 		B208D3F71C9B55630057804D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B208D3F61C9B55630057804D /* Fonts */; };
+		B208D3FB1C9B7D8D0057804D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B208D3FA1C9B7D8D0057804D /* Images.xcassets */; };
 		B28C85651ABDD7CD00F32FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */; };
 		B28C85671ABDD7CD00F32FC7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C85661ABDD7CD00F32FC7 /* Document.swift */; };
 		B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85681ABDD7CD00F32FC7 /* Document.xib */; };
 		B28C856D1ABDD7CD00F32FC7 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B28C856B1ABDD7CD00F32FC7 /* Document.xcdatamodeld */; };
-		B28C856F1ABDD7CD00F32FC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */; };
 		B28C85721ABDD7CD00F32FC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */; };
 		B28C857E1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C857D1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift */; };
 		B28C858C1ABDF36D00F32FC7 /* CKNDaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C858B1ABDF36D00F32FC7 /* CKNDaysController.swift */; };
@@ -56,13 +56,13 @@
 		B208D3E81C9856FF0057804D /* CKNEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventView.swift; sourceTree = "<group>"; };
 		B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventProgressBar.swift; sourceTree = "<group>"; };
 		B208D3F61C9B55630057804D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		B208D3FA1C9B7D8D0057804D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* CruelKeyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruelKeyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28C85661ABDD7CD00F32FC7 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		B28C85691ABDD7CD00F32FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		B28C856C1ABDD7CD00F32FC7 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
-		B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B28C85711ABDD7CD00F32FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B28C85771ABDD7CD00F32FC7 /* CruelKeyNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruelKeyNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C857C1ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B208D3F61C9B55630057804D /* Fonts */,
+				B208D3FA1C9B7D8D0057804D /* Images.xcassets */,
 				B208D3EC1C9B4BA30057804D /* ManagedObjects */,
 				B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */,
 				B28C85661ABDD7CD00F32FC7 /* Document.swift */,
@@ -135,7 +136,6 @@
 				B208D3E81C9856FF0057804D /* CKNEventView.swift */,
 				B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */,
 				B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */,
-				B28C856E1ABDD7CD00F32FC7 /* Images.xcassets */,
 				B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */,
 				B28C85681ABDD7CD00F32FC7 /* Document.xib */,
 				B28C85971ABE269B00F32FC7 /* CKNEditData.xib */,
@@ -258,9 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B208D3F71C9B55630057804D /* Fonts in Resources */,
+				B208D3FB1C9B7D8D0057804D /* Images.xcassets in Resources */,
 				B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */,
 				B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */,
-				B28C856F1ABDD7CD00F32FC7 /* Images.xcassets in Resources */,
 				B28C85721ABDD7CD00F32FC7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
