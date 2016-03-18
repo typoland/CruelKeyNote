@@ -64,18 +64,33 @@ class CKNEventView:NSView {
             let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
             paragraphStyle.maximumLineHeight = 14.0
             
+            let font: NSFont = NSFont(name: "LatoOT Regular", size: 13.0)!
+            
+            let fontDescriptor = font.fontDescriptor.fontDescriptorByAddingAttributes([
+                NSFontFeatureSettingsAttribute: [
+                    [
+                        NSFontFeatureTypeIdentifierKey: kNumberCaseType,
+                        NSFontFeatureSelectorIdentifierKey: kLowerCaseNumbersSelector
+                    ],
+                    [
+                        NSFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        NSFontFeatureSelectorIdentifierKey: kProportionalNumbersSelector
+                    ],
+                    [
+                        NSFontFeatureTypeIdentifierKey: kLigaturesType,
+                        NSFontFeatureSelectorIdentifierKey: kCommonLigaturesOnSelector
+                    ],
+                    [
+                        NSFontFeatureTypeIdentifierKey: kLigaturesType,
+                        NSFontFeatureSelectorIdentifierKey: kRareLigaturesOnSelector
+                    ]
+                ]
+                ])
+            
             stringAttr [NSForegroundColorAttributeName] = NSColor.blackColor()
-            stringAttr [NSFontAttributeName] = NSFont(name: "LatoOT Regular", size: 13.0)
+            stringAttr [NSFontAttributeName] = NSFont(descriptor: fontDescriptor, size: 13.0)!
             stringAttr [NSParagraphStyleAttributeName] = paragraphStyle
             
-            
-            let openTypeFeatures  = [
-            NSFontFeatureTypeIdentifierKey: kNumberCaseType,
-            NSFontFeatureSelectorIdentifierKey: kLowerCaseNumbersSelector
-            ]
-            
-            
-           stringAttr [NSFontFeatureSettingsAttribute] = openTypeFeatures
             
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "hh:mm" //NSDateFormatterStyle.NoStyle
