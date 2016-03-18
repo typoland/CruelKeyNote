@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="CruelKeyNote" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="BeBrief">
             <connections>
                 <outlet property="daysController" destination="dQk-sK-cRM" id="wtR-M9-4Rl"/>
                 <outlet property="eventsController" destination="YOH-Im-1P1" id="fHP-GV-qzo"/>
@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="502" height="272"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="jWb-S8-Xhw" customClass="CKNMainView" customModule="CruelKeyNote" customModuleProvider="target">
+                    <customView id="jWb-S8-Xhw" customClass="CKNMainView" customModule="BeBrief" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="502" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
@@ -37,7 +37,7 @@
             </connections>
             <point key="canvasLocation" x="930" y="-7"/>
         </window>
-        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="dQk-sK-cRM" userLabel="Days" customClass="CKNDaysController" customModule="CruelKeyNote" customModuleProvider="target">
+        <arrayController mode="entity" entityName="Day" automaticallyPreparesContent="YES" id="dQk-sK-cRM" userLabel="Days" customClass="CKNDaysController" customModule="BeBrief" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="jDD-mF-oqv"/>
             </connections>
