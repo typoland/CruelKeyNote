@@ -9,6 +9,8 @@
 import Cocoa
 import Foundation
 
+//@objc(Document)
+
 class Document: NSPersistentDocument {
     @IBOutlet weak var daysController: CKNDaysController!
     @IBOutlet weak var eventsController: NSArrayController!
@@ -33,10 +35,10 @@ class Document: NSPersistentDocument {
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
        
         let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
-        print(delegate)
+        //print(delegate)
         //let panel = delegate.hudPanelController
         //panel.addObserver(self, forKeyPath: "window.visible", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
-        delegate.addObserver(self, forKeyPath: "hudIsVisible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+        delegate.hudPanelController.window!.addObserver(self, forKeyPath: "visible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
         
         
     }

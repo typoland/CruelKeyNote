@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CKNHudPanelController" customModule="CruelKeyNote" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CKNHudPanelController" customModule="BeBrief" customModuleProvider="target">
             <connections>
                 <outlet property="daysController" destination="lmC-z7-eVR" id="LgI-7O-ZLj"/>
                 <outlet property="eventsController" destination="SXB-AK-hXm" id="weF-9m-G5N"/>
@@ -360,7 +360,7 @@
                 <binding destination="QxD-Vl-e9D" name="managedObjectContext" keyPath="selection.managedObjectContext" id="0ag-HY-xIg"/>
             </connections>
         </arrayController>
-        <customObject id="6ia-XZ-HPQ" customClass="DragableOrderedSetTableViewDelegate" customModule="CruelKeyNote" customModuleProvider="target">
+        <customObject id="6ia-XZ-HPQ" customClass="DragableOrderedSetTableViewDelegate" customModule="BeBrief" customModuleProvider="target">
             <connections>
                 <outlet property="arrayController" destination="SXB-AK-hXm" id="0bO-eM-p9H"/>
                 <outlet property="tableView" destination="iGK-wJ-jqC" id="dLC-nA-Iow"/>

@@ -15,14 +15,14 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     @IBOutlet weak var daysController:NSArrayController!
     
     @IBAction func closePanel(sender:AnyObject) {
-        print ("ClosePanel" )
+        //print ("ClosePanel" )
         self.document = nil
         self.window?.close()
     }
   
    func windowShouldClose(sender: AnyObject) -> Bool {
     //self.document?.canCloseDocumentWithDelegate(self, shouldCloseSelector: "closeIt:", contextInfo: nil)
-    print ("WindowShouldClose")
+    //print ("WindowShouldClose")
     //self.document = nil
     return true
     /*print(notification)
@@ -49,6 +49,7 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
     func canAddMedia() -> Bool {
         return 0..<self.eventsController.arrangedObjects.count ~= self.eventsController.selectionIndex
     }
+    
     @IBAction func removeMedia (sender:AnyObject) {
         if self.canAddMedia() {
             let event:Event = self.eventsController.arrangedObjects.objectAtIndex(self.eventsController.selectionIndex) as! Event
@@ -58,7 +59,7 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
         }
     }
     @IBAction func addMedia(sender:AnyObject) {
-        print(eventsController)
+        //print(eventsController)
         let fileTypes = ["pdf", "png", "tiff", "jpeg"]
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
@@ -69,14 +70,13 @@ class CKNHudPanelController: NSWindowController, NSWindowDelegate{
         
         panel.beginWithCompletionHandler { (result) ->  Void in
             if result == NSFileHandlingPanelOKButton {
-                print(panel.URL)
-                let image = NSImage(byReferencingURL: panel.URL!)
-                print(image)
+                //print(panel.URL)
+                //print(image)
                 if  self.canAddMedia() {
                     let event:Event = self.eventsController.arrangedObjects.objectAtIndex(self.eventsController.selectionIndex) as! Event
                     event.media = NSData(contentsOfURL: panel.URL!)
                     event.mediaType = panel.URL?.pathExtension
-                    print(event)
+                    //print(event)
                 }
                 
             }

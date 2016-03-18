@@ -140,12 +140,11 @@ class CKNMainView:NSView {
         NSColor.blackColor().set()
         NSRectFill(rect)
         
-        
     }
     
     
     func rearangeDayViews() {
-        Swift.print("rearranging")
+        //Swift.print("rearranging")
         let dayGap:CGFloat = 3
         let eventGap:CGFloat = 1
         let margin:CGFloat = 0
@@ -182,7 +181,11 @@ class CKNMainView:NSView {
     func changeTime() {
         CKNCurrentEvent = daysController?.currentEvent()
         if clickedEvent != nil {
-            imageView.image = NSImage(data: clickedEvent!.media!)
+            if clickedEvent!.media != nil {
+                imageView.image = NSImage(data: clickedEvent!.media!)
+            } else {
+                imageView.image = nil
+            }
         } else if CKNCurrentEvent?.media != nil {
             imageView.image = NSImage(data: CKNCurrentEvent!.media!)
             progressBar.event = CKNCurrentEvent

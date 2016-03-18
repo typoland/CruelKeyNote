@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 @objc(Day)
+
 class Day: NSManagedObject {
     override func awakeFromInsert() {
         self.startDate = NSDate()

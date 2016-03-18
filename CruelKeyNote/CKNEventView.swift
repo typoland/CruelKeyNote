@@ -63,9 +63,20 @@ class CKNEventView:NSView {
             NSBezierPath(roundedRect: dirtyRect, xRadius: 5.0, yRadius: 5.0).fill()
             let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
             paragraphStyle.maximumLineHeight = 14.0
-            stringAttr[NSForegroundColorAttributeName] = NSColor.blackColor()
-            stringAttr[NSFontAttributeName] = NSFont(name: "LatoOT Regular", size: 13.0)
-            stringAttr[NSParagraphStyleAttributeName] = paragraphStyle
+            
+            stringAttr [NSForegroundColorAttributeName] = NSColor.blackColor()
+            stringAttr [NSFontAttributeName] = NSFont(name: "LatoOT Regular", size: 13.0)
+            stringAttr [NSParagraphStyleAttributeName] = paragraphStyle
+            
+            
+            let openTypeFeatures  = [
+            NSFontFeatureTypeIdentifierKey: kNumberCaseType,
+            NSFontFeatureSelectorIdentifierKey: kLowerCaseNumbersSelector
+            ]
+            
+            
+           stringAttr [NSFontFeatureSettingsAttribute] = openTypeFeatures
+            
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "hh:mm" //NSDateFormatterStyle.NoStyle
             //dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
