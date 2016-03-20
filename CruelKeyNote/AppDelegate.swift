@@ -11,19 +11,18 @@ import Cocoa
 @NSApplicationMain
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var hudPanelController = CKNHudPanelController.shared()
-    var hudIsVisible:Bool = false
+    
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to tear down your application
         //[[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"de", @"en", @"fr", nil] forKey:@"AppleLanguages"];
         //[[NSUserDefaults standardUserDefaults] synchronize]; //to make the change immediate
-        NSUserDefaults.standardUserDefaults().setObject(["pl", "en", "fr"], forKey: "AppleLanguages")
+        //NSUserDefaults.standardUserDefaults().setObject(["pl", "en", "fr"], forKey: "AppleLanguages")
         //forKey:@"AppleLanguages"];
-        NSUserDefaults.standardUserDefaults().synchronize()//; //to make the change immediate
+        //NSUserDefaults.standardUserDefaults().synchronize()//; //to make the change immediate
         
-        let app:NSApplication = NSApplication.sharedApplication()
-       app.addObserver(self, forKeyPath: "mainWindow", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
+        //let app:NSApplication = NSApplication.sharedApplication()
+       //app.addObserver(self, forKeyPath: "mainWindow", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
         /*
         hudPanelController.addObserver(self, forKeyPath: "window", options: NSKeyValueObservingOptions([.New]), context: nil)
         //print ("done observer")
@@ -34,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             object: hudPanelController)
         */
     }
-  
+  /*
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath != nil {
         switch keyPath! {
@@ -66,6 +65,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hudIsVisible = false
     }
 
-
+*/
 }
 

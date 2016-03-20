@@ -34,6 +34,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B2241D5E1C9EFDD50049F849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2241D241C9EFDD40049F849;
+			remoteInfo = BeBrief;
+		};
+		B2241D601C9EFDD50049F849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2241D3B1C9EFDD40049F849;
+			remoteInfo = BeBriefTests;
+		};
+		B2241D621C9EFDD50049F849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2241D461C9EFDD40049F849;
+			remoteInfo = BeBriefUITests;
+		};
 		B28C85781ABDD7CD00F32FC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B28C85571ABDD7CD00F32FC7 /* Project object */;
@@ -57,6 +78,7 @@
 		B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventProgressBar.swift; sourceTree = "<group>"; };
 		B208D3F61C9B55630057804D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B208D3FA1C9B7D8D0057804D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BeBrief.xcodeproj; path = BeBrief/BeBrief.xcodeproj; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* BeBrief.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeBrief.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +126,16 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		B2241D591C9EFDD40049F849 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2241D5F1C9EFDD50049F849 /* BeBrief.app */,
+				B2241D611C9EFDD50049F849 /* BeBriefTests.xctest */,
+				B2241D631C9EFDD50049F849 /* BeBriefUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B28C85561ABDD7CD00F32FC7 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +157,7 @@
 		B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */ = {
 			isa = PBXGroup;
 			children = (
+				B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */,
 				B208D3F61C9B55630057804D /* Fonts */,
 				B208D3FA1C9B7D8D0057804D /* Images.xcassets */,
 				B208D3EC1C9B4BA30057804D /* ManagedObjects */,
@@ -244,6 +277,12 @@
 			mainGroup = B28C85561ABDD7CD00F32FC7;
 			productRefGroup = B28C85601ABDD7CD00F32FC7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2241D591C9EFDD40049F849 /* Products */;
+					ProjectRef = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B28C855E1ABDD7CD00F32FC7 /* BeBrief */,
@@ -251,6 +290,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B2241D5F1C9EFDD50049F849 /* BeBrief.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BeBrief.app;
+			remoteRef = B2241D5E1C9EFDD50049F849 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2241D611C9EFDD50049F849 /* BeBriefTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BeBriefTests.xctest;
+			remoteRef = B2241D601C9EFDD50049F849 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2241D631C9EFDD50049F849 /* BeBriefUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BeBriefUITests.xctest;
+			remoteRef = B2241D621C9EFDD50049F849 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B28C855D1ABDD7CD00F32FC7 /* Resources */ = {

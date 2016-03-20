@@ -14,7 +14,9 @@ import Foundation
 class Document: NSPersistentDocument {
     @IBOutlet weak var daysController: CKNDaysController!
     @IBOutlet weak var eventsController: NSArrayController!
-   
+    
+    var hudPanelController = CKNHudPanelController.shared()
+    var hudIsVisible:Bool = false
     
     
     override init() {
