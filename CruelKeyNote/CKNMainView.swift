@@ -47,6 +47,8 @@ class CKNMainView:NSView {
         
         daysController!.addObserver(self, forKeyPath: "arrangedObjects", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
         daysController!.addObserver(self, forKeyPath: "arrangedObjects.events", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+        daysController!.addObserver(self, forKeyPath: "arrangedObjects.duration", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+
         daysController!.addObserver(self, forKeyPath: "arrangedObjects.startDate", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewChanged:", name: NSWindowDidResizeNotification, object: nil)

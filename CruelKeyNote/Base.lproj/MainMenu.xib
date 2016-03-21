@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
@@ -612,18 +612,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="View" id="HyV-fh-RgO">
                         <items>
-                            <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                <connections>
-                                    <action selector="toggleToolbarShown:" target="-1" id="BXY-wc-z0C"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Customize Toolbar…" id="1UK-8n-QPP">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="pQI-g3-MTW"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Toggle Panel" keyEquivalent="d" id="9yc-Pl-f8c">
                                 <connections>
                                     <action selector="toggleCKNPanel:" target="-1" id="LVr-Te-9xJ"/>
@@ -705,21 +693,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="199" height="680"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView fixedFrame="YES" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="FFx-qo-taJ">
+                    <splitView dividerStyle="thin" id="FFx-qo-taJ">
                         <rect key="frame" x="0.0" y="0.0" width="199" height="680"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <customView fixedFrame="YES" id="Et8-Vl-8W6">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="235"/>
+                            <customView id="Et8-Vl-8W6">
+                                <rect key="frame" x="0.0" y="0.0" width="199" height="230.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView focusRingType="none" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-M6-PHa">
-                                        <rect key="frame" x="0.0" y="27" width="199" height="208"/>
-                                        <clipView key="contentView" ambiguous="YES" id="R5O-yY-d7i">
-                                            <rect key="frame" x="1" y="23" width="197" height="184"/>
+                                    <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="zc1-M6-PHa">
+                                        <rect key="frame" x="0.0" y="33" width="199" height="197.5"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <clipView key="contentView" id="R5O-yY-d7i">
+                                            <rect key="frame" x="1" y="23" width="197" height="173.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="YMP-fz-Sn8" id="hIZ-eV-Iju">
-                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="184"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="173.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -780,19 +770,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-cc-WAQ">
-                                        <rect key="frame" x="36" y="3" width="65" height="19"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Add Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QU7-Rl-H5b">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="smallSystem"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="add:" target="RhN-b7-H6E" id="xhG-MX-rye"/>
-                                            <binding destination="RhN-b7-H6E" name="enabled" keyPath="canAdd" id="oEl-uK-otx"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGS-rb-YMu">
-                                        <rect key="frame" x="102" y="3" width="90" height="19"/>
+                                    <button verticalHuggingPriority="750" id="OGS-rb-YMu">
+                                        <rect key="frame" x="115" y="6.5" width="77" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Czq-Cp-VwZ">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -802,14 +782,27 @@
                                             <binding destination="RhN-b7-H6E" name="enabled" keyPath="canRemove" id="5kW-Fe-PUc"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" id="e7K-cc-WAQ">
+                                        <rect key="frame" x="44" y="6" width="63" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Add Day" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QU7-Rl-H5b">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="add:" target="RhN-b7-H6E" id="xhG-MX-rye"/>
+                                            <binding destination="RhN-b7-H6E" name="enabled" keyPath="canAdd" id="oEl-uK-otx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </customView>
-                            <customView fixedFrame="YES" id="AfS-f8-Jap">
-                                <rect key="frame" x="0.0" y="236" width="199" height="283.5"/>
+                            <customView id="AfS-f8-Jap">
+                                <rect key="frame" x="0.0" y="231.5" width="199" height="283.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-IW-cqp">
-                                        <rect key="frame" x="5" y="258" width="189" height="17"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cWh-IW-cqp">
+                                        <rect key="frame" x="5" y="256.5" width="189" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="sQa-KL-Idz">
                                             <dateFormatter key="formatter" formatterBehavior="custom10_4" dateStyle="long" timeStyle="short" dateFormat="EEEE, d MMMM  'at' HH:mm" id="XYj-A6-JgX"/>
                                             <font key="font" size="12" name="LatoOT-Regular"/>
@@ -820,14 +813,15 @@
                                             </connections>
                                         </textFieldCell>
                                     </textField>
-                                    <scrollView focusRingType="none" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgP-C1-BzT">
-                                        <rect key="frame" x="7" y="34" width="185" height="220"/>
-                                        <clipView key="contentView" ambiguous="YES" id="z1y-WY-AoB">
-                                            <rect key="frame" x="1" y="23" width="183" height="196"/>
+                                    <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="WgP-C1-BzT">
+                                        <rect key="frame" x="7" y="34.5" width="185" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <clipView key="contentView" id="z1y-WY-AoB">
+                                            <rect key="frame" x="1" y="23" width="183" height="194"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6Ma-Xp-YOg" id="WI3-NP-TPi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="196"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="194"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -898,8 +892,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-0n-nYS">
+                                    <button verticalHuggingPriority="750" id="ggy-0n-nYS">
                                         <rect key="frame" x="105" y="7" width="87" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c1L-z5-dNs">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -914,8 +909,9 @@
                                             </binding>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-Rp-RCG">
+                                    <button verticalHuggingPriority="750" id="P6o-Rp-RCG">
                                         <rect key="frame" x="31" y="7" width="66" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Add Event" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gog-By-8mf">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -940,12 +936,13 @@
                                     </button>
                                 </subviews>
                             </customView>
-                            <customView fixedFrame="YES" id="oJC-Fs-wGl">
-                                <rect key="frame" x="0.0" y="520.5" width="199" height="159.5"/>
+                            <customView id="oJC-Fs-wGl">
+                                <rect key="frame" x="0.0" y="516" width="199" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView canDrawConcurrently="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fg-Hf-9d1">
-                                        <rect key="frame" x="0.0" y="33" width="199" height="126.5"/>
+                                    <imageView canDrawConcurrently="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="4fg-Hf-9d1">
+                                        <rect key="frame" x="0.0" y="37.5" width="199" height="126.5"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" id="Ahr-fm-mlo"/>
                                         <connections>
                                             <binding destination="uuU-AJ-sm3" name="value" keyPath="selection.media" id="e4S-iQ-CpP">
@@ -956,8 +953,9 @@
                                             </binding>
                                         </connections>
                                     </imageView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Dp-1K-sT2">
-                                        <rect key="frame" x="103" y="6" width="89" height="19"/>
+                                    <button verticalHuggingPriority="750" id="6Dp-1K-sT2">
+                                        <rect key="frame" x="103" y="10.5" width="89" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Remove Media" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m1Y-EN-vNu">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -967,8 +965,9 @@
                                             <binding destination="uuU-AJ-sm3" name="enabled" keyPath="canRemove" id="uhd-w0-7oY"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ole-cs-QI8">
-                                        <rect key="frame" x="29" y="6" width="68" height="19"/>
+                                    <button verticalHuggingPriority="750" id="Ole-cs-QI8">
+                                        <rect key="frame" x="29" y="10.5" width="68" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="roundTextured" title="Add Media" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Anu-ba-YfS">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
@@ -994,7 +993,7 @@
                 <outlet property="daysController" destination="RhN-b7-H6E" id="5pL-wh-5Hz"/>
                 <outlet property="eventsController" destination="uuU-AJ-sm3" id="o60-T9-Nie"/>
             </connections>
-            <point key="canvasLocation" x="8.5" y="182"/>
+            <point key="canvasLocation" x="11.5" y="174"/>
         </window>
         <customObject id="GJT-wS-qiJ" customClass="DragableOrderedSetTableViewDelegate" customModule="BeBrief" customModuleProvider="target">
             <connections>
