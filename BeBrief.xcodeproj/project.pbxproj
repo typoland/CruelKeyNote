@@ -28,33 +28,12 @@
 		B28C857E1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C857D1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift */; };
 		B28C858C1ABDF36D00F32FC7 /* CKNDaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C858B1ABDF36D00F32FC7 /* CKNDaysController.swift */; };
 		B28C858E1ABDF4E700F32FC7 /* CKNMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */; };
-		B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28C85971ABE269B00F32FC7 /* CKNEditData.xib */; };
-		B28C859C1ABE3DE700F32FC7 /* CKNHudPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */; };
+		B2E01E3C1CA0678300567207 /* CKNEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E01E3B1CA0678300567207 /* CKNEventsController.swift */; };
+		B2E01E3E1CA06BF200567207 /* CKNPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E01E3D1CA06BF200567207 /* CKNPanel.swift */; };
 		B2F81B321C8F7F880017022F /* OrderedSetArrayValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F81B311C8F7F880017022F /* OrderedSetArrayValueTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B2241D5E1C9EFDD50049F849 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B2241D241C9EFDD40049F849;
-			remoteInfo = BeBrief;
-		};
-		B2241D601C9EFDD50049F849 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B2241D3B1C9EFDD40049F849;
-			remoteInfo = BeBriefTests;
-		};
-		B2241D621C9EFDD50049F849 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B2241D461C9EFDD40049F849;
-			remoteInfo = BeBriefUITests;
-		};
 		B28C85781ABDD7CD00F32FC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B28C85571ABDD7CD00F32FC7 /* Project object */;
@@ -78,7 +57,6 @@
 		B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventProgressBar.swift; sourceTree = "<group>"; };
 		B208D3F61C9B55630057804D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B208D3FA1C9B7D8D0057804D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BeBrief.xcodeproj; path = BeBrief/BeBrief.xcodeproj; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* BeBrief.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeBrief.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,8 +69,8 @@
 		B28C857D1ABDD7CD00F32FC7 /* CruelKeyNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruelKeyNoteTests.swift; sourceTree = "<group>"; };
 		B28C858B1ABDF36D00F32FC7 /* CKNDaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNDaysController.swift; sourceTree = "<group>"; };
 		B28C858D1ABDF4E700F32FC7 /* CKNMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNMainView.swift; sourceTree = "<group>"; };
-		B28C85971ABE269B00F32FC7 /* CKNEditData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKNEditData.xib; sourceTree = "<group>"; };
-		B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNHudPanelController.swift; sourceTree = "<group>"; };
+		B2E01E3B1CA0678300567207 /* CKNEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventsController.swift; sourceTree = "<group>"; };
+		B2E01E3D1CA06BF200567207 /* CKNPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNPanel.swift; sourceTree = "<group>"; };
 		B2F81B311C8F7F880017022F /* OrderedSetArrayValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedSetArrayValueTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,16 +104,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		B2241D591C9EFDD40049F849 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B2241D5F1C9EFDD50049F849 /* BeBrief.app */,
-				B2241D611C9EFDD50049F849 /* BeBriefTests.xctest */,
-				B2241D631C9EFDD50049F849 /* BeBriefUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B28C85561ABDD7CD00F32FC7 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +125,6 @@
 		B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */ = {
 			isa = PBXGroup;
 			children = (
-				B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */,
 				B208D3F61C9B55630057804D /* Fonts */,
 				B208D3FA1C9B7D8D0057804D /* Images.xcassets */,
 				B208D3EC1C9B4BA30057804D /* ManagedObjects */,
@@ -168,10 +135,10 @@
 				B208D3E61C97975C0057804D /* CKNDayView.swift */,
 				B208D3E81C9856FF0057804D /* CKNEventView.swift */,
 				B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */,
-				B28C859B1ABE3DE700F32FC7 /* CKNHudPanelController.swift */,
+				B2E01E3B1CA0678300567207 /* CKNEventsController.swift */,
+				B2E01E3D1CA06BF200567207 /* CKNPanel.swift */,
 				B28C85701ABDD7CD00F32FC7 /* MainMenu.xib */,
 				B28C85681ABDD7CD00F32FC7 /* Document.xib */,
-				B28C85971ABE269B00F32FC7 /* CKNEditData.xib */,
 				B208D3D81C9365B10057804D /* EventMediaController.swift */,
 				B208D3D61C9308690057804D /* DragableOrderedSetTableViewDelegate.swift */,
 				B208D3E21C9375400057804D /* DataToImageTransformer.swift */,
@@ -277,12 +244,6 @@
 			mainGroup = B28C85561ABDD7CD00F32FC7;
 			productRefGroup = B28C85601ABDD7CD00F32FC7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B2241D591C9EFDD40049F849 /* Products */;
-					ProjectRef = B2241D581C9EFDD40049F849 /* BeBrief.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B28C855E1ABDD7CD00F32FC7 /* BeBrief */,
@@ -291,30 +252,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		B2241D5F1C9EFDD50049F849 /* BeBrief.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = BeBrief.app;
-			remoteRef = B2241D5E1C9EFDD50049F849 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B2241D611C9EFDD50049F849 /* BeBriefTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BeBriefTests.xctest;
-			remoteRef = B2241D601C9EFDD50049F849 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B2241D631C9EFDD50049F849 /* BeBriefUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BeBriefUITests.xctest;
-			remoteRef = B2241D621C9EFDD50049F849 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		B28C855D1ABDD7CD00F32FC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -322,7 +259,6 @@
 			files = (
 				B208D3F71C9B55630057804D /* Fonts in Resources */,
 				B208D3FB1C9B7D8D0057804D /* Images.xcassets in Resources */,
-				B28C85991ABE269B00F32FC7 /* CKNEditData.xib in Resources */,
 				B28C856A1ABDD7CD00F32FC7 /* Document.xib in Resources */,
 				B28C85721ABDD7CD00F32FC7 /* MainMenu.xib in Resources */,
 			);
@@ -343,13 +279,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28C856D1ABDD7CD00F32FC7 /* Document.xcdatamodeld in Sources */,
+				B2E01E3E1CA06BF200567207 /* CKNPanel.swift in Sources */,
 				B208D3E71C97975C0057804D /* CKNDayView.swift in Sources */,
 				B208D3E51C944CB50057804D /* TimeIntervalTransformer.swift in Sources */,
 				B208D3D91C9365B10057804D /* EventMediaController.swift in Sources */,
+				B2E01E3C1CA0678300567207 /* CKNEventsController.swift in Sources */,
 				B2F81B321C8F7F880017022F /* OrderedSetArrayValueTransformer.swift in Sources */,
 				B208D3D71C9308690057804D /* DragableOrderedSetTableViewDelegate.swift in Sources */,
 				B208D3DF1C9367640057804D /* Day.swift in Sources */,
-				B28C859C1ABE3DE700F32FC7 /* CKNHudPanelController.swift in Sources */,
 				B208D3E91C9856FF0057804D /* CKNEventView.swift in Sources */,
 				B208D3E31C9375400057804D /* DataToImageTransformer.swift in Sources */,
 				B208D3EB1C989CFA0057804D /* CKNEventProgressBar.swift in Sources */,

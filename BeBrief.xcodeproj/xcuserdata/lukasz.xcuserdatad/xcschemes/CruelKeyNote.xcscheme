@@ -52,26 +52,6 @@
                ReferencedContainer = "container:BeBrief.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2241D3A1C9EFDD40049F849"
-               BuildableName = "BeBriefTests.xctest"
-               BlueprintName = "BeBriefTests"
-               ReferencedContainer = "container:CruelKeyNote/BeBrief/BeBrief.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2241D451C9EFDD40049F849"
-               BuildableName = "BeBriefUITests.xctest"
-               BlueprintName = "BeBriefUITests"
-               ReferencedContainer = "container:CruelKeyNote/BeBrief/BeBrief.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

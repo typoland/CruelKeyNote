@@ -11,60 +11,37 @@ import Cocoa
 @NSApplicationMain
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    //var hudPanelController = CKNHudPanelController.shared()
+   // var hudIsVisible:Bool = false
     
+    @IBOutlet weak var panel:CKNPanel!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to tear down your application
-        //[[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"de", @"en", @"fr", nil] forKey:@"AppleLanguages"];
-        //[[NSUserDefaults standardUserDefaults] synchronize]; //to make the change immediate
-        //NSUserDefaults.standardUserDefaults().setObject(["pl", "en", "fr"], forKey: "AppleLanguages")
-        //forKey:@"AppleLanguages"];
-        //NSUserDefaults.standardUserDefaults().synchronize()//; //to make the change immediate
-        
-        //let app:NSApplication = NSApplication.sharedApplication()
-       //app.addObserver(self, forKeyPath: "mainWindow", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
-        /*
-        hudPanelController.addObserver(self, forKeyPath: "window", options: NSKeyValueObservingOptions([.New]), context: nil)
-        //print ("done observer")
-        NSNotificationCenter.defaultCenter().addObserver(
-            hudPanelController.window!,
-            selector: "hudChangedVisibility:",
-            name: "CKNHudPanelControllerChanged",
-            object: hudPanelController)
-        */
+      
     }
-  /*
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath != nil {
-        switch keyPath! {
-        case "mainWindow" : hudPanelController.document = NSApplication.sharedApplication().mainWindow?.windowController?.document as? Document
-            //print("WindowChanged")
-        //case "window":
-           // hudIsVisible = hudPanelController.window != nil
-            //print ("Hud changed \(hudIsVisible)")
-        default: ()
-        }
-        }
-    }
+
     
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
-        let app:NSApplication = NSApplication.sharedApplication()
-        app.removeObserver(self, forKeyPath: "mainWindow")
-
+       
         
     }
-    @IBAction func showPanel(sender:AnyObject) {
-        print("OrderFront \(hudPanelController)")
-        hudPanelController.window?.makeKeyAndOrderFront(self)
-        hudIsVisible = true
-    }
-    @IBAction func hidePanel(sender:AnyObject) {
-        print("Hide \(hudPanelController)")
-        hudPanelController.window?.orderOut(self)
-        hudIsVisible = false
-    }
+    
+    
+    @IBAction func toggleCKNPanel(sender:AnyObject) {
+        if let menuItem:NSMenuItem = sender as? NSMenuItem {
+            Swift.print(panel.visible)
+            if panel.visible {
+                panel.orderOut(self)
+                menuItem.title = "Show Panel"
+                
+            } else {
+                panel.makeKeyAndOrderFront(self)
+                menuItem.title = "Hide Panel"
 
-*/
+            }
+        }
+    }
 }
 

@@ -28,6 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
                             <outlet property="daysController" destination="dQk-sK-cRM" id="fUW-u6-5xN"/>
+                            <outlet property="eventsController" destination="YOH-Im-1P1" id="z66-Lt-5zB"/>
                         </connections>
                     </customView>
                 </subviews>
@@ -42,7 +43,7 @@
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="jDD-mF-oqv"/>
             </connections>
         </arrayController>
-        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="YOH-Im-1P1" userLabel="Events">
+        <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" id="YOH-Im-1P1" userLabel="Events" customClass="CKNEventsController" customModule="BeBrief" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="gzS-fe-eA7"/>
             </connections>

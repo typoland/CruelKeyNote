@@ -13,10 +13,8 @@ import Foundation
 
 class Document: NSPersistentDocument {
     @IBOutlet weak var daysController: CKNDaysController!
-    @IBOutlet weak var eventsController: NSArrayController!
-    
-    var hudPanelController = CKNHudPanelController.shared()
-    var hudIsVisible:Bool = false
+    @IBOutlet weak var eventsController: CKNEventsController!
+   
     
     
     override init() {
@@ -24,23 +22,18 @@ class Document: NSPersistentDocument {
         // Add your subclass-specific initialization here.
     }
     
-    override func canCloseDocumentWithDelegate(delegate: AnyObject, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
-        print("delegate\(delegate)")
-        print("sholudCloseSelector \(shouldCloseSelector)")
-        print("conextInfo \(contextInfo)")
-        super.canCloseDocumentWithDelegate(delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
-    }
+   
     
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         //print("Panel \(self.managedObjectContext)")
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
        
-        let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
+       // let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
         //print(delegate)
         //let panel = delegate.hudPanelController
         //panel.addObserver(self, forKeyPath: "window.visible", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
-        delegate.hudPanelController.window!.addObserver(self, forKeyPath: "visible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
+        //delegate.hudPanelController.window!.addObserver(self, forKeyPath: "visible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
         
         
     }

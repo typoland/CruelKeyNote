@@ -15,6 +15,7 @@ class CKNMainView:NSView {
 
     
     @IBOutlet weak var daysController:CKNDaysController!
+    @IBOutlet weak var eventsController:CKNEventsController!
     //@IBOutlet weak  var  imageView: NSImageView?=nil
     
     var image:NSImage?=nil
@@ -64,8 +65,9 @@ class CKNMainView:NSView {
             
             clickedEvent = event
             let app:AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-            let panelEventsController = app.hudPanelController.eventsController
-             let panelDaysController = app.hudPanelController.daysController
+            let panelEventsController = app.panel.eventsController
+             //
+            let panelDaysController = app.panel.daysController
             if panelDaysController != nil {
             panelEventsController.setSelectedObjects([event!])
             panelDaysController.setSelectedObjects([event!.day!])
