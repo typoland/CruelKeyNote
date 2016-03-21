@@ -8,11 +8,19 @@
 
 import Foundation
 import CoreData
+import AppKit
 
 @objc(Event)
 class Event: NSManagedObject {
     
 // Insert code here to add functionality to your managed object subclass
-
+    
+    func image() -> NSImage {
+        if self.media != nil {
+            return NSImage(data: self.media!)!
+        } else {
+            return NSImage(named: NSImageNameStopProgressTemplate)!
+        }
+    }
     
 }

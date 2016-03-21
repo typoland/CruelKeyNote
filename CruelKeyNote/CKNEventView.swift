@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 var CKNCurrentEvent:Event? = nil
 let CKNEventViewClickOn = "com.typoland.cruelKeyNote.eventClickOn"
-let CKNEventViewClickOff = "com.typoland.cruelKeyNote.eventClickOff"
+//let CKNEventViewClickOff = "com.typoland.cruelKeyNote.eventClickOff"
 
 class CKNEventView:NSView {
     var event:Event?

@@ -30,18 +30,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func toggleCKNPanel(sender:AnyObject) {
-        if let menuItem:NSMenuItem = sender as? NSMenuItem {
-            Swift.print(panel.visible)
+       
             if panel.visible {
                 panel.orderOut(self)
-                menuItem.title = "Show Panel"
                 
             } else {
                 panel.makeKeyAndOrderFront(self)
-                menuItem.title = "Hide Panel"
 
             }
-        }
+        
     }
 }
 

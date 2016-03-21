@@ -18,7 +18,6 @@ class CKNEventsController: NSArrayController {
         if self.canAddMedia() {
             let event:Event = self.arrangedObjects.objectAtIndex(self.selectionIndex) as! Event
             event.media = nil
-            event.mediaType = nil
             event.mediaName = nil
         }
     }
@@ -39,7 +38,6 @@ class CKNEventsController: NSArrayController {
                 if  self.canAddMedia() {
                     let event:Event = self.arrangedObjects.objectAtIndex(self.selectionIndex) as! Event
                     event.media = NSData(contentsOfURL: panel.URL!)
-                    event.mediaType = panel.URL?.pathExtension
                     //print(event)
                 }
                 

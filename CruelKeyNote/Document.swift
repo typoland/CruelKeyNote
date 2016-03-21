@@ -16,34 +16,7 @@ class Document: NSPersistentDocument {
     @IBOutlet weak var eventsController: CKNEventsController!
    
     
-    
-    override init() {
-        super.init()
-        // Add your subclass-specific initialization here.
-    }
-    
-   
-    
-    override func windowControllerDidLoadNib(aController: NSWindowController) {
-        super.windowControllerDidLoadNib(aController)
-        //print("Panel \(self.managedObjectContext)")
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
-       
-       // let delegate:AppDelegate = NSApplication.sharedApplication().delegate! as! AppDelegate
-        //print(delegate)
-        //let panel = delegate.hudPanelController
-        //panel.addObserver(self, forKeyPath: "window.visible", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
-        //delegate.hudPanelController.window!.addObserver(self, forKeyPath: "visible", options: NSKeyValueObservingOptions([.Old, .New]), context: nil)
-        
-        
-    }
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        Swift.print(keyPath)
-    }
-    func hudChangedVisibility (notification:NSNotification) {
-        "changed \(notification)"
-    }
+
     override class func autosavesInPlace() -> Bool {
         return true
     }

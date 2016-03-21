@@ -59,7 +59,7 @@ class CKNMainView:NSView {
     }
     
     func eventClicked (notification:NSNotification) {
-        Swift.print(notification.object)
+        //Swift.print(notification.object)
         let event:Event? = notification.object as? Event
         if event?.managedObjectContext == daysController?.managedObjectContext {
             
@@ -139,7 +139,7 @@ class CKNMainView:NSView {
         
     override func drawRect(rect: NSRect) {
         
-        NSColor.blackColor().set()
+        //NSColor.blackColor().set()
         NSRectFill(rect)
         
     }
@@ -183,13 +183,11 @@ class CKNMainView:NSView {
     func changeTime() {
         CKNCurrentEvent = daysController?.currentEvent()
         if clickedEvent != nil {
-            if clickedEvent!.media != nil {
-                imageView.image = NSImage(data: clickedEvent!.media!)
-            } else {
-                imageView.image = nil
-            }
-        } else if CKNCurrentEvent?.media != nil {
-            imageView.image = NSImage(data: CKNCurrentEvent!.media!)
+            imageView.image = clickedEvent!.image() //NSImage(data: clickedEvent!.media!)
+            
+           
+        } else if CKNCurrentEvent != nil {
+            imageView.image = CKNCurrentEvent!.image()
             progressBar.event = CKNCurrentEvent
             //Swift.print(imageView.image)
             

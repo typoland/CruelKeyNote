@@ -810,11 +810,14 @@
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-IW-cqp">
                                         <rect key="frame" x="5" y="258" width="189" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="sQa-KL-Idz">
-                                            <dateFormatter key="formatter" dateStyle="long" timeStyle="short" id="XYj-A6-JgX"/>
-                                            <font key="font" metaFont="system"/>
+                                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="sQa-KL-Idz">
+                                            <dateFormatter key="formatter" formatterBehavior="custom10_4" dateStyle="long" timeStyle="short" dateFormat="EEEE, d MMMM  'at' HH:mm" id="XYj-A6-JgX"/>
+                                            <font key="font" size="12" name="LatoOT-Regular"/>
                                             <color key="textColor" red="0.25749684340000001" green="0.25749684340000001" blue="0.25749684340000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="RhN-b7-H6E" name="value" keyPath="selection.startDate" id="PoW-bq-prH"/>
+                                            </connections>
                                         </textFieldCell>
                                     </textField>
                                     <scrollView focusRingType="none" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgP-C1-BzT">
@@ -972,7 +975,7 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="addMedia:" target="uuU-AJ-sm3" id="RyU-st-ALK"/>
-                                            <binding destination="uuU-AJ-sm3" name="enabled" keyPath="canRemove" id="qqI-LK-a55"/>
+                                            <binding destination="uuU-AJ-sm3" name="enabled" keyPath="canRemove" id="PXh-UT-3be"/>
                                         </connections>
                                     </button>
                                 </subviews>

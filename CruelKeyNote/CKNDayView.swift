@@ -39,9 +39,7 @@ class CKNDayView:NSView {
         dayFormatter.dateFormat = "EEEE"
         super.init(coder: coder)
     }
-    override func awakeFromNib() {
-        Swift.print("Will not work AWAKE!!!")
-    }
+    
     
     
     
