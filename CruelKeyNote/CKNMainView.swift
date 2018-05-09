@@ -141,7 +141,7 @@ class CKNMainView:NSView {
         
     override func drawRect(rect: NSRect) {
         
-        //NSColor.blackColor().set()
+        NSColor.blackColor().set()
         NSRectFill(rect)
         
     }

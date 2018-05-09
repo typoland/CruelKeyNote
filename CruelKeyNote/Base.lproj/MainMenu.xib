@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -670,16 +670,16 @@
         </arrayController>
         <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="uuU-AJ-sm3" userLabel="Events" customClass="CKNEventsController" customModule="BeBrief" customModuleProvider="target">
             <connections>
-                <binding destination="RhN-b7-H6E" name="managedObjectContext" keyPath="selection.managedObjectContext" id="vCP-P3-w0R">
-                    <dictionary key="options">
-                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                    </dictionary>
-                </binding>
                 <binding destination="RhN-b7-H6E" name="contentArray" keyPath="selection.events" id="kI9-TA-1Up">
                     <dictionary key="options">
                         <bool key="NSDeletesObjectsOnRemove" value="YES"/>
                         <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
                         <string key="NSValueTransformerName">OrderedSetArrayValueTransformer</string>
+                    </dictionary>
+                </binding>
+                <binding destination="RhN-b7-H6E" name="managedObjectContext" keyPath="selection.managedObjectContext" id="vCP-P3-w0R">
+                    <dictionary key="options">
+                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                     </dictionary>
                 </binding>
             </connections>
@@ -689,6 +689,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="163" width="199" height="680"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="199" height="100"/>
             <view key="contentView" id="zNH-8p-4La">
                 <rect key="frame" x="0.0" y="0.0" width="199" height="680"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -705,7 +706,7 @@
                                         <rect key="frame" x="0.0" y="33" width="199" height="197.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="R5O-yY-d7i">
-                                            <rect key="frame" x="1" y="23" width="197" height="173.5"/>
+                                            <rect key="frame" x="1" y="0.0" width="197" height="196.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="YMP-fz-Sn8" id="hIZ-eV-Iju">
@@ -817,7 +818,7 @@
                                         <rect key="frame" x="7" y="34.5" width="185" height="218"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="z1y-WY-AoB">
-                                            <rect key="frame" x="1" y="23" width="183" height="194"/>
+                                            <rect key="frame" x="1" y="0.0" width="183" height="217"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6Ma-Xp-YOg" id="WI3-NP-TPi">

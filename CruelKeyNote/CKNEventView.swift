@@ -93,12 +93,13 @@ class CKNEventView:NSView {
             
             
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "hh:mm" //NSDateFormatterStyle.NoStyle
+            dateFormatter.dateFormat = "H:mm" //NSDateFormatterStyle.NoStyle
             //dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
             let eventTimeStartString:NSString = dateFormatter.stringFromDate(eventStartTime)
             
             eventTimeStartString.drawAtPoint(NSMakePoint(dirtyRect.origin.x+3, dirtyRect.origin.y+2), withAttributes: stringAttr)
+            
             if let title:NSString = event!.title  {
                 title.drawInRect(NSMakeRect(dirtyRect.origin.x+3, dirtyRect.origin.y+3,  dirtyRect.width-6, dirtyRect.height-6), withAttributes: stringAttr)
             }
