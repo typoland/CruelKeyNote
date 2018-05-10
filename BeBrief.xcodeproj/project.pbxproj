@@ -57,6 +57,7 @@
 		B208D3EA1C989CFA0057804D /* CKNEventProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNEventProgressBar.swift; sourceTree = "<group>"; };
 		B208D3F61C9B55630057804D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B208D3FA1C9B7D8D0057804D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B250E5BB20A46FA80041104B /* BeBrief.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeBrief.entitlements; sourceTree = "<group>"; };
 		B28C855F1ABDD7CD00F32FC7 /* BeBrief.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeBrief.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C85631ABDD7CD00F32FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28C85641ABDD7CD00F32FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		B28C85561ABDD7CD00F32FC7 = {
 			isa = PBXGroup;
 			children = (
+				B250E5BB20A46FA80041104B /* BeBrief.entitlements */,
 				B28C85611ABDD7CD00F32FC7 /* CruelKeyNote */,
 				B28C857A1ABDD7CD00F32FC7 /* CruelKeyNoteTests */,
 				B28C85601ABDD7CD00F32FC7 /* Products */,
@@ -226,6 +228,11 @@
 				TargetAttributes = {
 					B28C855E1ABDD7CD00F32FC7 = {
 						CreatedOnToolsVersion = 6.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					B28C85761ABDD7CD00F32FC7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -444,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BeBrief.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CruelKeyNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -458,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BeBrief.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CruelKeyNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

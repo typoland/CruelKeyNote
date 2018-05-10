@@ -52,16 +52,16 @@ class CKNMainView:NSView {
         
         daysController!.addObserver(self, forKeyPath: "arrangedObjects.startDate", options: NSKeyValueObservingOptions([.old, .new]), context: nil)
         
-        NotificationCenter.default.addObserver(self, selector: Selector("viewChanged:"), name: NSWindow.didResizeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CKNMainView.viewChanged(_:)), name: NSWindow.didResizeNotification, object: nil)
         //self.window?.addObserver(self, forKeyPath: "needsDisplay", options: NSKeyValueObservingOptions ([.New, .Old]), context: nil)
-        NotificationCenter.default.addObserver(self, selector: Selector("eventClicked:"), name: CKNEventViewClickOn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CKNMainView.eventClicked(_:)), name: CKNEventViewClickOn, object: nil)
         
         organizeLayout()
         rearangeDayViews()
         
     }
     
-    @objc func eventClicked (notification:NSNotification) {
+    @objc func eventClicked (_ notification:NSNotification) {
         //Swift.print(notification.object)
         let event:Event? = notification.object as? Event
         if event?.managedObjectContext == daysController?.managedObjectContext {
@@ -82,7 +82,7 @@ class CKNMainView:NSView {
         changeTime()
     }
     
-    @objc func viewChanged (notification:NSNotification) {
+    @objc func viewChanged (_ notification:NSNotification) {
         //Swift.print (notification.object)
         rearangeDayViews()
         progressBar.refreshSize()

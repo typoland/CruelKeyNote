@@ -23,9 +23,9 @@ class DragableOrderedSetTableViewDelegate: NSObject {
         writeRowsWithIndexes rowIndexes: NSIndexSet,
         toPasteboard pasteboard: NSPasteboard) -> Bool {
             
-        let data:NSData = NSKeyedArchiver.archivedData(withRootObject: rowIndexes) as NSData
+        let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes) 
         pasteboard.declareTypes([NSPasteboard.PasteboardType(rawValue: arrayController.entityName!)], owner: self)
-        pasteboard.setData(data as Data, forType: NSPasteboard.PasteboardType(rawValue: arrayController.entityName!))
+        pasteboard.setData(data, forType: NSPasteboard.PasteboardType(rawValue: arrayController.entityName!))
             return true
     }
     
@@ -63,13 +63,13 @@ class DragableOrderedSetTableViewDelegate: NSObject {
  */
             let pasteboard:NSPasteboard = info.draggingPasteboard()
         let rowData = pasteboard.data(forType: NSPasteboard.PasteboardType(rawValue: arrayController.entityName!))! 
-        let rowIndexes:NSIndexSet = NSKeyedUnarchiver.unarchiveObject(with: rowData) as! NSIndexSet
+        if  let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: rowData) as? NSIndexSet {
             if rowIndexes.firstIndex > row {
                 set.moveObjects(at: rowIndexes as IndexSet, to: row)
             } else {
                 set.moveObjects(at: rowIndexes as IndexSet, to: row-rowIndexes.count)
             }
-            
+        }
     return true
     }
 
