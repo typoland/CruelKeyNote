@@ -9,7 +9,8 @@
 import Foundation
 import AppKit
 
-@objc(DataToImageTransformer) class DataToImageTransformer : NSValueTransformer {
+//@objc
+class DataToImageTransformer : ValueTransformer {
     
     override class func transformedValueClass() -> AnyClass {
         return NSImage.self
@@ -19,12 +20,12 @@ import AppKit
         return false
     }
     
-    override func transformedValue(value: AnyObject?) -> AnyObject? {
+     func transformedValue(value: AnyObject?) -> AnyObject? {
         if value != nil {
-            return NSImage(data:value! as! NSData)
+            return NSImage(data:value! as! Data)
         }
         else {
-            return NSImage(named: NSImageNameAddTemplate)
+            return NSImage(named: NSImage.Name.addTemplate)
         }
     }
     /*
@@ -33,5 +34,11 @@ import AppKit
         return NSOrderedSet(array: value as! [AnyObject])
     }
     */
+}
+
+
+extension NSValueTransformerName {
+    static let dataToImageTransformer =
+        NSValueTransformerName(rawValue: "DataToImageTransformer")
 }
 

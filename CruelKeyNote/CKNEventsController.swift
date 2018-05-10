@@ -6,22 +6,26 @@
 //  Copyright © 2016 tyPoland. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import AppKit
 
 class CKNEventsController: NSArrayController {
-    func canAddMedia() -> Bool {
-        return 0..<self.arrangedObjects.count ~= self.selectionIndex
+    
+    @objc func canAddMedia() -> Bool {
+        return 0 ..< ( self.arrangedObjects as! [Any] ).count ~= self.selectionIndex
     }
     
-    @IBAction func removeMedia (sender:AnyObject) {
+    
+    
+    @IBAction func removeMedia (_ sender:Any) {
         if self.canAddMedia() {
-            let event:Event = self.arrangedObjects.objectAtIndex(self.selectionIndex) as! Event
+            let event:Event = (self.arrangedObjects as! [Event])[self.selectionIndex]
             event.media = nil
             event.mediaName = nil
         }
     }
-    @IBAction func addMedia(sender:AnyObject) {
+    
+    @IBAction func addMedia(_ sender:Any) {
         //print(eventsController)
         let fileTypes = ["pdf", "png", "tiff", "jpeg"]
         let panel = NSOpenPanel()
@@ -31,13 +35,13 @@ class CKNEventsController: NSArrayController {
         panel.canChooseFiles = true
         panel.allowedFileTypes = fileTypes
         
-        panel.beginWithCompletionHandler { (result) ->  Void in
-            if result == NSFileHandlingPanelOKButton {
+        panel.begin { (result) ->  Void in
+            if result.hashValue == NSFileHandlingPanelOKButton {
                 //print(panel.URL)
                 //print(image)
                 if  self.canAddMedia() {
-                    let event:Event = self.arrangedObjects.objectAtIndex(self.selectionIndex) as! Event
-                    event.media = NSData(contentsOfURL: panel.URL!)
+                    let event:Event = (self.arrangedObjects as! [Event])[self.selectionIndex]
+                    event.media = NSData(contentsOf: panel.url!)
                     //print(event)
                 }
                 

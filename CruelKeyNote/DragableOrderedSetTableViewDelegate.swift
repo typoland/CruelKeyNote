@@ -15,53 +15,59 @@ class DragableOrderedSetTableViewDelegate: NSObject {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableView.registerForDraggedTypes([arrayController.entityName!])
-        tableView.setDraggingSourceOperationMask(NSDragOperation.Move, forLocal: true)
+        tableView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: arrayController.entityName!)])
+        tableView.setDraggingSourceOperationMask(NSDragOperation.move, forLocal: true)
     }
     
     func tableView( tableView: NSTableView,
         writeRowsWithIndexes rowIndexes: NSIndexSet,
         toPasteboard pasteboard: NSPasteboard) -> Bool {
             
-            let data:NSData = NSKeyedArchiver.archivedDataWithRootObject(rowIndexes)
-            pasteboard.declareTypes([arrayController.entityName!], owner: self)
-            pasteboard.setData(data, forType: arrayController.entityName!)
+        let data:NSData = NSKeyedArchiver.archivedData(withRootObject: rowIndexes) as NSData
+        pasteboard.declareTypes([NSPasteboard.PasteboardType(rawValue: arrayController.entityName!)], owner: self)
+        pasteboard.setData(data as Data, forType: NSPasteboard.PasteboardType(rawValue: arrayController.entityName!))
             return true
     }
     
     func tableView(tableView: NSTableView,
         validateDrop info: NSDraggingInfo,
         proposedRow row: Int,
-        proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+        proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
             if info.draggingSource() as! NSTableView == tableView {
-                if dropOperation == NSTableViewDropOperation.On {
-                    tableView.setDropRow(row, dropOperation: NSTableViewDropOperation.Above)}
-                if ((NSApplication.sharedApplication().currentEvent?.modifierFlags.contains(NSEventModifierFlags.AlternateKeyMask)) != nil)  {
-                    return NSDragOperation.Copy
+                if dropOperation == NSTableView.DropOperation.on {
+                    tableView.setDropRow(row, dropOperation: NSTableView.DropOperation.above)}
+                if ((NSApplication.shared.currentEvent?.modifierFlags.contains(NSEvent.ModifierFlags.option)) != nil)  {
+                    return NSDragOperation.copy
                 } else {
-                    return NSDragOperation.Move
+                    return NSDragOperation.move
                 }
                 
             } else {
-                return NSDragOperation.None
+                return []
             }
     }
    
     func tableView(tableView: NSTableView,
         acceptDrop info: NSDraggingInfo,
         row: Int,
-         dropOperation: NSTableViewDropOperation) -> Bool {
-            let bindinginfo:NSDictionary = arrayController.infoForBinding("contentArray")!
-            
-            let set:NSMutableOrderedSet = bindinginfo.objectForKey(NSObservedObjectKey)!.mutableOrderedSetValueForKeyPath(bindinginfo.objectForKey(NSObservedKeyPathKey) as! String)
-            // let set:NSMutableOrderedSet
+        dropOperation: NSTableView.DropOperation) -> Bool {
+        let bindinginfo = arrayController.infoForBinding(NSBindingName.contentArray)!
+        
+            //a
+        let observedObject = bindinginfo[NSBindingInfoKey.observedObject]! as! NSObject
+        let keyPath = bindinginfo[NSBindingInfoKey.observedKeyPath]! as! String
+        let set = observedObject.mutableOrderedSetValue(forKeyPath: keyPath)
+            //a
+        /*
+        let set:NSMutableOrderedSet = bindinginfo.objectForKey(NSObservedObjectKey)!.mutableOrderedSetValueForKeyPath(bindinginfo.objectForKey(NSObservedKeyPathKey) as! String)
+ */
             let pasteboard:NSPasteboard = info.draggingPasteboard()
-            let rowData:NSData = pasteboard.dataForType(arrayController.entityName!)!
-            let rowIndexes:NSIndexSet = NSKeyedUnarchiver.unarchiveObjectWithData(rowData) as! NSIndexSet
+        let rowData = pasteboard.data(forType: NSPasteboard.PasteboardType(rawValue: arrayController.entityName!))! 
+        let rowIndexes:NSIndexSet = NSKeyedUnarchiver.unarchiveObject(with: rowData) as! NSIndexSet
             if rowIndexes.firstIndex > row {
-                set.moveObjectsAtIndexes(rowIndexes, toIndex: row)
+                set.moveObjects(at: rowIndexes as IndexSet, to: row)
             } else {
-                set.moveObjectsAtIndexes(rowIndexes, toIndex: row-rowIndexes.count)
+                set.moveObjects(at: rowIndexes as IndexSet, to: row-rowIndexes.count)
             }
             
     return true

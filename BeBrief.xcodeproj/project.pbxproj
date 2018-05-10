@@ -229,6 +229,7 @@
 					};
 					B28C85761ABDD7CD00F32FC7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3ASHMCMJEN;
 						TestTargetID = B28C855E1ABDD7CD00F32FC7;
 					};
 				};
@@ -472,6 +473,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3ASHMCMJEN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -484,6 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = BeBrief;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeBrief.app/Contents/MacOS/BeBrief";
 			};
 			name = Debug;
@@ -493,6 +496,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3ASHMCMJEN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -501,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typoland.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = BeBrief;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeBrief.app/Contents/MacOS/BeBrief";
 			};
 			name = Release;

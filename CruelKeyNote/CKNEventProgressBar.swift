@@ -32,44 +32,49 @@ class CKNEventProgressBar:NSView {
         }
     }
     
-    override func drawRect(dirtyRect: NSRect) {
+    override func draw(_ dirtyRect: NSRect) {
         if event != nil {
             //Swift.print("drawing bar")
-            let (start, end) = (event!.day?.eventTimes(event!))!
+            let (start, end) = (event!.day?.eventTimes(event: event!))!
             
-            let currentDuration = NSDate().timeIntervalSinceDate(start as NSDate)
+            let currentDuration = NSDate().timeIntervalSince((start as NSDate) as Date)
             let width = superview!.frame.width * CGFloat(currentDuration) / CGFloat(event!.duration)
             //Swift.print (currentDuration, width)
             
-            NSColor.redColor().set()
+            NSColor.red.set()
             let rect = NSMakeRect(0, 0, width, dirtyRect.height)
             NSBezierPath(roundedRect: rect, xRadius: 5, yRadius: 5).fill()
             
-            
-            let stringAttr:[String:AnyObject] = [
+            let stringAttr:[NSAttributedStringKey:Any]  =  [
+                NSAttributedStringKey.font: NSFont(name: "LatoOT-Bold", size: 24)!,
+                NSAttributedStringKey.foregroundColor : NSColor.white]
+            /*let stringAttr:[String:AnyObject] = [
                 NSFontAttributeName : NSFont(name: "LatoOT Bold", size: 24)!,
                 NSForegroundColorAttributeName : NSColor.whiteColor()]
+ */
             //Swift.print("event", event)
             var titleFrameSize = NSMakeSize(0, 0)
-            if let title:NSString = event!.title  {
+            if let title:NSString = event!.title as NSString?  {
                 //Swift.print("Let's try", title.className)
-                title.drawAtPoint( NSMakePoint(5, 1), withAttributes: stringAttr)
-                titleFrameSize = title.sizeWithAttributes(stringAttr)
+                title.draw( at: NSMakePoint(5, 1), withAttributes: stringAttr)
+                titleFrameSize = title.size(withAttributes: stringAttr)
             }
             
             //let timeFromStartTillNow:NSTimeInterval = start.timeIntervalSinceDate(NSDate())
             //Swift.print (NSDate().timeIntervalSinceDate(end))
            //let intervalToString:TimeIntervalTransformer = TimeIntervalTransformer ()
-            let unitFlags:NSCalendarUnit = NSCalendarUnit([.Hour, .Minute, .Second])
-            let breakdownInfo:NSDateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: NSDate(), toDate: end, options: [])
+            //let unitFlags:NSCalendar.Unit = NSCalendar.Unit([.hour, .minute, .second])
+            let components: Set<Calendar.Component> = [.hour, .minute, .second]
+            let breakdownInfo:DateComponents = Calendar.current.dateComponents(components, from: Date(), to: end as Date)
+
             
-            let eventToEndString:NSString = NSString(format: "%02d:%02d", breakdownInfo.minute, breakdownInfo.second)
-            let textTimeFrameSize = eventToEndString.sizeWithAttributes(stringAttr)
+            let eventToEndString:NSString = NSString(format: "%02d:%02d", breakdownInfo.minute!, breakdownInfo.second!)
+            let textTimeFrameSize = eventToEndString.size(withAttributes: stringAttr)
             var posX = width-textTimeFrameSize.width-5
             if posX < titleFrameSize.width + 20 {
                 posX = titleFrameSize.width + 20
             }
-            eventToEndString.drawAtPoint(NSMakePoint(posX, 1), withAttributes: stringAttr)
+            eventToEndString.draw(at: NSMakePoint(posX, 1), withAttributes: stringAttr)
         }
     }
 

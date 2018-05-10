@@ -20,11 +20,11 @@ class Day: NSManagedObject {
     
     func eventTimes(event:Event) -> (NSDate, NSDate) {
         
-        var duration:NSTimeInterval = 0
+        var duration:TimeInterval = 0
         
         for searchEvent:Event in events?.array as! [Event] {
             if searchEvent === event {
-                return (NSDate(timeInterval: duration, sinceDate: startDate), NSDate(timeInterval: duration+event.duration, sinceDate: startDate))
+                return (NSDate(timeInterval: duration, since: startDate as Date), NSDate(timeInterval: duration+event.duration, since: startDate as Date))
              }
             duration += searchEvent.duration
         }

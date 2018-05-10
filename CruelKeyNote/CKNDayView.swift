@@ -10,9 +10,9 @@ import Foundation
 import AppKit
 
 struct CKNColors {
-    static var past:NSColor = NSColor.darkGrayColor()
-    static var now:NSColor = NSColor.redColor()
-    static var future:NSColor = NSColor.lightGrayColor()
+    static var past:NSColor = NSColor.darkGray
+    static var now:NSColor = NSColor.red
+    static var future:NSColor = NSColor.lightGray
 }
 
 class CKNDayView:NSView {
@@ -20,7 +20,7 @@ class CKNDayView:NSView {
     var eventsViews:[Event:CKNEventView] = [Event:CKNEventView] ()
     //var totalDuration:NSTimeInterval
     
-    var dayFormatter:NSDateFormatter = NSDateFormatter()
+    var dayFormatter:DateFormatter = DateFormatter()
     //var availableWidth:CGFloat = 0
     
     init (withDay:Day) {
@@ -44,14 +44,14 @@ class CKNDayView:NSView {
     
     
     
-    override func drawRect(dirtyRect: NSRect) {
+    override func draw(_ dirtyRect: NSRect) {
 
         if let thisDay = day {
-            let  endingTime = NSDate(timeInterval: thisDay.duration, sinceDate: thisDay.startDate)
+            let  endingTime = NSDate(timeInterval: thisDay.duration, since: thisDay.startDate as Date)
             
-            if NSDate().compare(thisDay.startDate) == NSComparisonResult.OrderedAscending {
+            if NSDate().compare(thisDay.startDate as Date) == ComparisonResult.orderedAscending {
                 CKNColors.future.set()
-            } else if (NSDate().compare(thisDay.startDate)  == NSComparisonResult.OrderedDescending) && (NSDate().compare(endingTime) == NSComparisonResult.OrderedAscending) {
+            } else if (NSDate().compare(thisDay.startDate as Date)  == ComparisonResult.orderedDescending) && (NSDate().compare(endingTime as Date) == ComparisonResult.orderedAscending) {
                 CKNColors.now.set()
             } else {
                 CKNColors.past.set()
@@ -61,14 +61,14 @@ class CKNDayView:NSView {
             let dayRect = NSMakeRect(dirtyRect.origin.x, dirtyRect.size.height - dayBarSize, dirtyRect.width, 30)
             NSBezierPath(roundedRect: dayRect, xRadius: 5.0, yRadius: 5.0).fill()
             
-            let attr:[String:AnyObject]  =  [
-                NSFontAttributeName : NSFont(name: "LatoOT-Bold", size: 24)!,
-                NSForegroundColorAttributeName : NSColor.whiteColor()]
+            let attr:[NSAttributedStringKey:Any]  =  [
+                 NSAttributedStringKey.font: NSFont(name: "LatoOT-Bold", size: 24)!,
+                NSAttributedStringKey.foregroundColor : NSColor.white]
             
-            if let weekDay:NSString = dayFormatter.stringFromDate(thisDay.startDate) {
+            let weekDay = dayFormatter.string(from: (thisDay.startDate as Date))
                 //Swift.print(thisDay.startDate, weekDay)
-                weekDay.drawAtPoint(NSMakePoint(5, dirtyRect.size.height-(dayBarSize-1)), withAttributes: attr)
-            }
+            weekDay.draw(at: NSMakePoint(5, dirtyRect.size.height-(dayBarSize-1)), withAttributes: attr)
+            
             
            
            

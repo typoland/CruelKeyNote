@@ -9,12 +9,12 @@
 import Foundation
 import AppKit
 
-infix operator ^^ { }
+infix operator ^^
 func ^^ (radix: Int, power: Int) -> Int {
     return Int(pow(Double(radix), Double(power)))
 }
 
-@objc(TimeIntervalTransformer) class TimeIntervalTransformer : NSValueTransformer {
+class TimeIntervalTransformer : ValueTransformer {
     
     var format = "hh:mm"
     
@@ -26,25 +26,25 @@ func ^^ (radix: Int, power: Int) -> Int {
         return true;
     }
     
-    override func transformedValue(value: AnyObject?) -> AnyObject? {
+    func transformedValue(value: AnyObject?) -> AnyObject? {
         if value != nil {
             let seconds = (value as! Float)
             
             let HH =  trunc(seconds / 3600)
             let MM = trunc((seconds - HH*3600)  / 60)
-            return String(format: "%.0f:%02.0f", HH, MM)
+            return String(format: "%.0f:%02.0f", HH, MM) as AnyObject
             
         } else {
-            return ""
+            return "" as AnyObject
         }
     }
     
-    override func reverseTransformedValue(value: AnyObject?)  -> AnyObject? {
+     func reverseTransformedValue(value: AnyObject?)  -> AnyObject? {
         let timeString:String = ( value as! String )
-        let HHMMSS = timeString.componentsSeparatedByString(":")
+        let HHMMSS = timeString.components(separatedBy: ":")
         var seconds = 0
         
-        for i in Range(0..<HHMMSS.count) {
+        for i in 0..<HHMMSS.count {
             let value:Int? = Int(HHMMSS [i] as String)
             if value != nil {
                 seconds = seconds + Int(HHMMSS [i] as String)! * (60 ^^ (HHMMSS.count-i))
@@ -59,7 +59,12 @@ func ^^ (radix: Int, power: Int) -> Int {
         }
         
         
-        return seconds
+        return seconds as AnyObject
     }
     
+}
+
+extension NSValueTransformerName {
+    static let timeIntervalTransformer =
+        NSValueTransformerName(rawValue: "TimeIntervalTransformer")
 }

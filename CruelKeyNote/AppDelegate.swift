@@ -11,13 +11,18 @@ import Cocoa
 @NSApplicationMain
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    //var hudPanelController = CKNHudPanelController.shared()
-   // var hudIsVisible:Bool = false
+
     
     @IBOutlet weak var panel:CKNPanel!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        ValueTransformer.setValueTransformer(DataToImageTransformer(),
+                                             forName: .dataToImageTransformer)
+        ValueTransformer.setValueTransformer(TimeIntervalTransformer(),
+                                             forName: .timeIntervalTransformer)
+        ValueTransformer.setValueTransformer(OrderedSetArrayValueTransformer(),
+                                             forName: .orderedSetArrayValueTransformer)
       
     }
 
@@ -31,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func toggleCKNPanel(sender:AnyObject) {
        
-            if panel.visible {
+        if panel.isVisible {
                 panel.orderOut(self)
                 
             } else {

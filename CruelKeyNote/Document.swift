@@ -17,14 +17,14 @@ class Document: NSPersistentDocument {
    
     
 
-    override class func autosavesInPlace() -> Bool {
+     class func autosavesInPlace() -> Bool {
         return true
     }
 
-    override var windowNibName: String? {
+     override var windowNibName: NSNib.Name? {
         // Returns the nib file name of the document
         // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
-        return "Document"
+        return NSNib.Name(rawValue: "Document")
     }
     
     

@@ -9,7 +9,7 @@
 import Foundation
 import AppKit
 var CKNCurrentEvent:Event? = nil
-let CKNEventViewClickOn = "com.typoland.cruelKeyNote.eventClickOn"
+let CKNEventViewClickOn = NSNotification.Name (rawValue: "com.typoland.cruelKeyNote.eventClickOn")
 //let CKNEventViewClickOff = "com.typoland.cruelKeyNote.eventClickOff"
 
 class CKNEventView:NSView {
@@ -29,32 +29,33 @@ class CKNEventView:NSView {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
     }
-    override func mouseDown(theEvent: NSEvent) {
-        NSNotificationCenter.defaultCenter().postNotificationName(CKNEventViewClickOn, object: self.event)
+    
+    override func mouseDown(with theEvent: NSEvent) {
+        NotificationCenter.default.post(name: CKNEventViewClickOn, object: self.event)
         eventClicked = true
     }
-    override func mouseUp(theEvent: NSEvent) {
-        NSNotificationCenter.defaultCenter().postNotificationName(CKNEventViewClickOn, object: nil)
+    override func mouseUp(with theEvent: NSEvent) {
+        NotificationCenter.default.post(name: CKNEventViewClickOn, object: nil)
         eventClicked = false
     }
     
-    override func drawRect(dirtyRect: NSRect) {
+    override func draw(_ dirtyRect: NSRect) {
         //NSColor.blueColor().set()
         
-        var stringAttr:[String:AnyObject] = [String:AnyObject]()
-        if event != nil {
+        var stringAttr = [NSAttributedStringKey:Any]()
+        if let event = event {
             
-            let (eventStartTime, eventEndTime) = event!.day!.eventTimes(event!)
+            let (eventStartTime, eventEndTime) = event.day!.eventTimes(event: event)
             if eventClicked {
-                NSColor.redColor().set()
-            } else if NSDate().compare(eventStartTime) == NSComparisonResult.OrderedAscending {
-                NSColor.lightGrayColor().set()
-                stringAttr[NSForegroundColorAttributeName] = NSColor.blackColor()
-            } else if (NSDate().compare(eventStartTime) == NSComparisonResult.OrderedDescending) && (NSDate().compare(eventEndTime) == NSComparisonResult.OrderedAscending)  {
-                NSColor.whiteColor().set()
+                NSColor.red.set()
+            } else if NSDate().compare(eventStartTime as Date) == ComparisonResult.orderedAscending {
+                NSColor.lightGray.set()
+                stringAttr[NSAttributedStringKey.foregroundColor] = NSColor.black
+            } else if (NSDate().compare(eventStartTime as Date) == ComparisonResult.orderedDescending) && (NSDate().compare(eventEndTime as Date) == ComparisonResult.orderedAscending)  {
+                NSColor.white.set()
                 CKNCurrentEvent = event
             } else {
-                NSColor.darkGrayColor().set()
+                NSColor.darkGray.set()
             }
                
                     
@@ -66,42 +67,44 @@ class CKNEventView:NSView {
             
             let font: NSFont = NSFont(name: "LatoOT Regular", size: 13.0)!
             
-            let fontDescriptor = font.fontDescriptor.fontDescriptorByAddingAttributes([
-                NSFontFeatureSettingsAttribute: [
+            let descriptorDict : [NSFontDescriptor.AttributeName : Any] = [
+                .featureSettings:[
                     [
-                        NSFontFeatureTypeIdentifierKey: kNumberCaseType,
-                        NSFontFeatureSelectorIdentifierKey: kLowerCaseNumbersSelector
+                        NSFontDescriptor.FeatureKey.typeIdentifier: kNumberCaseType,
+                        NSFontDescriptor.FeatureKey.selectorIdentifier: kLowerCaseNumbersSelector
                     ],
                     [
-                        NSFontFeatureTypeIdentifierKey: kNumberSpacingType,
-                        NSFontFeatureSelectorIdentifierKey: kProportionalNumbersSelector
+                        NSFontDescriptor.FeatureKey.typeIdentifier: kNumberSpacingType,
+                        NSFontDescriptor.FeatureKey.selectorIdentifier: kProportionalNumbersSelector
                     ],
                     [
-                        NSFontFeatureTypeIdentifierKey: kLigaturesType,
-                        NSFontFeatureSelectorIdentifierKey: kCommonLigaturesOnSelector
+                        NSFontDescriptor.FeatureKey.typeIdentifier: kLigaturesType,
+                        NSFontDescriptor.FeatureKey.selectorIdentifier: kCommonLigaturesOnSelector
                     ],
                     [
-                        NSFontFeatureTypeIdentifierKey: kLigaturesType,
-                        NSFontFeatureSelectorIdentifierKey: kRareLigaturesOnSelector
+                        NSFontDescriptor.FeatureKey.typeIdentifier: kLigaturesType,
+                        NSFontDescriptor.FeatureKey.selectorIdentifier: kRareLigaturesOnSelector
                     ]
                 ]
-                ])
+            ]
             
-            stringAttr [NSForegroundColorAttributeName] = NSColor.blackColor()
-            stringAttr [NSFontAttributeName] = NSFont(descriptor: fontDescriptor, size: 13.0)!
-            stringAttr [NSParagraphStyleAttributeName] = paragraphStyle
+            let fontDescriptor = font.fontDescriptor.addingAttributes(descriptorDict)
+            
+            stringAttr [NSAttributedStringKey.foregroundColor] = NSColor.black
+            stringAttr [NSAttributedStringKey.font] = NSFont(descriptor: fontDescriptor, size: 13.0)!
+            stringAttr [NSAttributedStringKey.paragraphStyle] = paragraphStyle
             
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "H:mm" //NSDateFormatterStyle.NoStyle
             //dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
-            let eventTimeStartString:NSString = dateFormatter.stringFromDate(eventStartTime)
+            let eventTimeStartString = dateFormatter.string(from: eventStartTime as Date)
             
-            eventTimeStartString.drawAtPoint(NSMakePoint(dirtyRect.origin.x+3, dirtyRect.origin.y+2), withAttributes: stringAttr)
+            eventTimeStartString.draw(at: NSMakePoint(dirtyRect.origin.x+3, dirtyRect.origin.y+2), withAttributes: stringAttr)
             
-            if let title:NSString = event!.title  {
-                title.drawInRect(NSMakeRect(dirtyRect.origin.x+3, dirtyRect.origin.y+3,  dirtyRect.width-6, dirtyRect.height-6), withAttributes: stringAttr)
+            if let title = event.title  {
+                title.draw(in: NSMakeRect(dirtyRect.origin.x+3, dirtyRect.origin.y+3,  dirtyRect.width-6, dirtyRect.height-6), withAttributes: stringAttr)
             }
         }
     }

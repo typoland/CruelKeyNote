@@ -18,11 +18,11 @@ class CKNDaysController:NSArrayController {
     
     func arraySortedByKey(key:NSString) -> NSArray {
         let daysSortDescriptor:NSSortDescriptor = NSSortDescriptor(key: key as String, ascending: true)
-        return (self.arrangedObjects as! NSArray).sortedArrayUsingDescriptors([daysSortDescriptor])
+        return (self.arrangedObjects as! NSArray).sortedArray(using: [daysSortDescriptor]) as NSArray
     }
     
-    func totalDuration () -> NSTimeInterval {
-        var duration:NSTimeInterval = 0
+    func totalDuration () -> TimeInterval {
+        var duration:TimeInterval = 0
         for day in self.arrangedObjects as! [Day] {
             duration += day.duration
         }
@@ -32,16 +32,16 @@ class CKNDaysController:NSArrayController {
     func currentEvent () -> Event? {
         for day in self.arrangedObjects as! [Day] {
             
-            let  endingTime = NSDate(timeInterval: day.duration, sinceDate: day.startDate)
+            let  endingTime = NSDate(timeInterval: day.duration, since: day.startDate as Date)
             
-            if (NSDate().compare(day.startDate)  == NSComparisonResult.OrderedDescending) && (NSDate().compare(endingTime) == NSComparisonResult.OrderedAscending) {
+            if (NSDate().compare(day.startDate as Date)  == ComparisonResult.orderedDescending) && (NSDate().compare(endingTime as Date) == ComparisonResult.orderedAscending) {
                 //print("Date is OK")
-                var eventsDuration:NSTimeInterval = 0
+                var eventsDuration:TimeInterval = 0
                 for event in day.events!.array as! [Event] {
-                    let eventStart = day.startDate.dateByAddingTimeInterval(eventsDuration)
-                    let eventEnd = day.startDate.dateByAddingTimeInterval(eventsDuration+event.duration)
+                    let eventStart = day.startDate.addingTimeInterval(eventsDuration)
+                    let eventEnd = day.startDate.addingTimeInterval(eventsDuration+event.duration)
                     //print("\(eventStart)\n\(eventEnd)\n\(NSDate())")
-                    if (NSDate().compare(eventStart) == NSComparisonResult.OrderedDescending) && (NSDate().compare(eventEnd) == NSComparisonResult.OrderedAscending) {
+                    if (NSDate().compare(eventStart as Date) == ComparisonResult.orderedDescending) && (NSDate().compare(eventEnd as Date) == ComparisonResult.orderedAscending) {
                         //print ("event is OK too")
                         return event
                     }

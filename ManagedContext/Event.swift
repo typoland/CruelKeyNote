@@ -17,9 +17,9 @@ class Event: NSManagedObject {
     
     func image() -> NSImage {
         if self.media != nil {
-            return NSImage(data: self.media!)!
+            return NSImage(data: self.media! as Data)!
         } else {
-            return NSImage(named: NSImageNameStopProgressTemplate)!
+            return NSImage(named: NSImage.Name.stopProgressTemplate)!
         }
     }
     
