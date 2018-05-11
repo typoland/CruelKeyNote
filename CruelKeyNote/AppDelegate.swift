@@ -14,17 +14,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     
     @IBOutlet weak var panel:CKNPanel!
-    
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-        Swift.print("AppFinish Lounching...")
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
         ValueTransformer.setValueTransformer(DataToImageTransformer(),
                                              forName: .dataToImageTransformer)
         ValueTransformer.setValueTransformer(TimeIntervalTransformer(),
                                              forName: .timeIntervalTransformer)
         ValueTransformer.setValueTransformer(OrderedSetArrayValueTransformer(),
                                              forName: .orderedSetArrayValueTransformer)
-      Swift.print("....AppFinish Lounching")
+        
+    }
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        // Insert code here to tear down your application
+        
     }
 
     

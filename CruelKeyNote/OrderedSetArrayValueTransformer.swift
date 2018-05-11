@@ -19,12 +19,20 @@ class OrderedSetArrayValueTransformer : ValueTransformer {
         return true;
         }
     
-    func transformedValue(value: AnyObject?) -> AnyObject? {
-        return (value as! NSOrderedSet).array as AnyObject
+    override func transformedValue(_ value: Any?) -> Any? {
+        Swift.print ("Transforming")
+        if let orderedSet = (value as? NSOrderedSet) {
+            return orderedSet.array as AnyObject
+        }
+        return nil
     }
 
-    func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
-        return NSOrderedSet(array: value as! [AnyObject])
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        Swift.print ("Transforming reverse")
+        if let array = value as? [AnyObject] {
+            return NSOrderedSet(array: array)
+        }
+        return nil
     }
 
 }
@@ -33,3 +41,5 @@ extension NSValueTransformerName {
     static let orderedSetArrayValueTransformer =
         NSValueTransformerName(rawValue: "OrderedSetArrayValueTransformer")
 }
+
+

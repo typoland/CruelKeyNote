@@ -16,11 +16,10 @@ class Event: NSManagedObject {
 // Insert code here to add functionality to your managed object subclass
     
     func image() -> NSImage {
-        if self.media != nil {
-            return NSImage(data: self.media! as Data)!
-        } else {
-            return NSImage(named: NSImage.Name.stopProgressTemplate)!
+        if let media = self.media as Data? {
+            return NSImage(data: media) ?? NSImage(named: NSImage.Name.stopProgressTemplate)!
         }
+        return NSImage(named: NSImage.Name.stopProgressTemplate)!
     }
     
 }

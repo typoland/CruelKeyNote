@@ -26,7 +26,7 @@ class TimeIntervalTransformer : ValueTransformer {
         return true;
     }
     
-    func transformedValue(value: AnyObject?) -> AnyObject? {
+    override func transformedValue(_ value: Any?) -> Any? {
         if value != nil {
             let seconds = (value as! Float)
             
@@ -39,7 +39,7 @@ class TimeIntervalTransformer : ValueTransformer {
         }
     }
     
-     func reverseTransformedValue(value: AnyObject?)  -> AnyObject? {
+     override func reverseTransformedValue(_ value: Any?)  -> Any? {
         let timeString:String = ( value as! String )
         let HHMMSS = timeString.components(separatedBy: ":")
         var seconds = 0
@@ -57,8 +57,6 @@ class TimeIntervalTransformer : ValueTransformer {
                 
             }
         }
-        
-        
         return seconds as AnyObject
     }
     

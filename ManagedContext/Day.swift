@@ -16,6 +16,7 @@ class Day: NSManagedObject {
         self.startDate = NSDate()
         self.duration = 0
     }
+    
 // Insert code here to add functionality to your managed object subclass
     
     func eventTimes(event:Event) -> (NSDate, NSDate) {

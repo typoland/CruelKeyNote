@@ -20,7 +20,7 @@ class DataToImageTransformer : ValueTransformer {
         return false
     }
     
-     func transformedValue(value: AnyObject?) -> AnyObject? {
+    override func transformedValue(_ value: Any?) -> Any? {
         if value != nil {
             return NSImage(data:value! as! Data)
         }

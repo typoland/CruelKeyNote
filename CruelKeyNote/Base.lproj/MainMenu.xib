@@ -672,11 +672,13 @@
         </arrayController>
         <arrayController mode="entity" entityName="Event" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="uuU-AJ-sm3" userLabel="Events" customClass="CKNEventsController" customModule="BeBrief" customModuleProvider="target">
             <connections>
-                <binding destination="RhN-b7-H6E" name="contentArray" keyPath="selection.events" id="ZN4-Vc-lLV">
+                <binding destination="RhN-b7-H6E" name="contentArray" keyPath="selection.events" id="RV8-i6-WPq">
                     <dictionary key="options">
                         <bool key="NSAlwaysPresentsApplicationModalAlerts" value="YES"/>
                         <bool key="NSDeletesObjectsOnRemove" value="YES"/>
                         <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
+                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                        <bool key="NSValidatesImmediately" value="YES"/>
                         <string key="NSValueTransformerName">OrderedSetArrayValueTransformer</string>
                     </dictionary>
                 </binding>
