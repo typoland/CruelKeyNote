@@ -871,7 +871,7 @@
                                                     </tableColumns>
                                                     <connections>
                                                         <outlet property="dataSource" destination="GJT-wS-qiJ" id="7ea-cv-d9l"/>
-                                                        <outlet property="delegate" destination="GJT-wS-qiJ" id="m1N-3M-TFL"/>
+                                                        <outlet property="delegate" destination="GJT-wS-qiJ" id="iQd-fR-7wf"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>

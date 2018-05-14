@@ -14,17 +14,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     
     @IBOutlet weak var panel:CKNPanel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    
+    static let doInitialize: Void = {
         ValueTransformer.setValueTransformer(DataToImageTransformer(),
                                              forName: .dataToImageTransformer)
         ValueTransformer.setValueTransformer(TimeIntervalTransformer(),
                                              forName: .timeIntervalTransformer)
         ValueTransformer.setValueTransformer(OrderedSetArrayValueTransformer(),
                                              forName: .orderedSetArrayValueTransformer)
-        
+    }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        AppDelegate.doInitialize
     }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to tear down your application
         

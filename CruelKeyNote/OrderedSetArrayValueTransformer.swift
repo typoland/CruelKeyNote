@@ -20,7 +20,6 @@ class OrderedSetArrayValueTransformer : ValueTransformer {
         }
     
     override func transformedValue(_ value: Any?) -> Any? {
-        Swift.print ("Transforming")
         if let orderedSet = (value as? NSOrderedSet) {
             return orderedSet.array as AnyObject
         }
@@ -28,7 +27,6 @@ class OrderedSetArrayValueTransformer : ValueTransformer {
     }
 
     override func reverseTransformedValue(_ value: Any?) -> Any? {
-        Swift.print ("Transforming reverse")
         if let array = value as? [AnyObject] {
             return NSOrderedSet(array: array)
         }
